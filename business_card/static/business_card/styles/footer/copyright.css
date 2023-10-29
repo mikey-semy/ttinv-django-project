@@ -1,0 +1,9 @@
+.copyright > p {
+	position: absolute;
+	right: 50%;
+	bottom: 0;
+	color: black;
+	font-size: 0.75rem;
+	font-weight: 400;
+	opacity: 0.5;
+}

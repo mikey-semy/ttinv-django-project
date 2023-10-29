@@ -1,0 +1,45 @@
+.main-nav {
+	height: 100%;
+	transition: 0.3s;
+}
+
+.main-nav__items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 1.25rem;
+    height: 100%;
+}
+
+.main-nav__item {
+    list-style-type: none;
+}
+
+.main-nav__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: .875rem;
+    font-weight: 700;
+    opacity: 0.69;
+}
+
+.main-nav__link:hover {
+    color: gray;
+    text-shadow: #000 0 .4 px 0;
+}
+
+.main-nav__link--current {
+    position: relative;
+    opacity: 1;
+}
+
+.main-nav__link--current:after {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    content: "";
+    background-color: gold;
+}

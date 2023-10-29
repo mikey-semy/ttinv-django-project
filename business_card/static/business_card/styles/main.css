@@ -1,0 +1,27 @@
+@import url("normalize.css");
+@import url("fonts.css");
+
+/*Header*/
+@import url("header/header.css");
+@import url("header/logo.css");
+@import url("header/nav.css");
+
+/*Footer*/
+@import url("footer/footer.css");
+@import url("footer/copyright.css");
+
+/*Body*/
+body {
+    font-family: 'Open Sans', 'Raleway', sans-serif;
+}
+
+.container {
+    max-width: 75rem;
+	height: auto;
+	margin: 0 auto;
+	padding: 0 1.25rem;
+}
+
+
+
+

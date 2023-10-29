@@ -1,0 +1,17 @@
+.header h1.logo {
+    margin: 7px 0 0 0;
+    float: left;
+}
+
+.header h1.logo a {
+    width: 200px;
+    height: 80px;
+    display: block;
+	background: url('/business_card/static/business_card/images/logo.svg') no-repeat 0 0;
+
+    /* the old way was including text-indent: -9999px; but the new way is as seen below */
+
+    /*font: 0/0 a;*/
+    text-shadow: none;
+    color: transparent;
+ }
