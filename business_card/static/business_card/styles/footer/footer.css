@@ -1,4 +1,6 @@
 .footer {
+	flex: 0 0 auto;
+
 	height: 5rem;
 	align-items: center;
 	padding-top: 10px;

@@ -1,4 +1,4 @@
-{% load static %}
+
 {% load templatetags %}
 
 <section id="benefits" class="benefits">
@@ -6,7 +6,7 @@
     <div class="benefit__items" >
         {% for benefit in benefits %}
 	        <card class="benefit__item">
-		        <img class="benefit__icon" src="{{ benefit.img.url }}">
+		        <img class="benefit__icon" src="{{ benefit.image.url }}">
 		        <div class="benefit__title">{{ benefit.title }}</div>
 		        <div class="benefit__subtitle">{{ benefit.subtitle }}</div>
             </card>

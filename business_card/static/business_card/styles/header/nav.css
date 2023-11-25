@@ -26,7 +26,7 @@
 
 .main-nav__link:hover {
     color: gray;
-    text-shadow: #000 0 .4 px 0;
+    text-shadow: #000 0 .4px 0;
 }
 
 .main-nav__link--current {

@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Benefits
 
-# Register your models here.
+# class BenefitsAdmin(admin.ModelAdmin):
+#     fields = ['title', 'subtitle', 'image',]
+
+admin.site.register(Benefits)
