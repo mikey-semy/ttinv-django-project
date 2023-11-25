@@ -1,3 +1,15 @@
+{% load static %}
+{% load templatetags %}
+
 <section id="benefits" class="benefits">
-    <h1>Наши преимущества</h1>
+    {% caption 'benefits' %}
+    <div class="benefit__items" >
+        {% for benefit in benefits %}
+	        <card class="benefit__item">
+		        <img class="benefit__icon" src="{{ benefit.img.url }}">
+		        <div class="benefit__title">{{ benefit.title }}</div>
+		        <div class="benefit__subtitle">{{ benefit.subtitle }}</div>
+            </card>
+        {% endfor %}
+    </div>
 </section>

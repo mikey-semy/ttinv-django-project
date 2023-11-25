@@ -1,9 +1,9 @@
-.logo_main {
+.logo--main {
     margin: 7px 0 0 0;
     float: left;
 }
 
-.logo_link {
+.logo__link {
     width: 200px;
     height: 80px;
     display: block;
