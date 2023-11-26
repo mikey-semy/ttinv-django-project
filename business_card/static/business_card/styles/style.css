@@ -6,6 +6,7 @@
 @import url("page/common.css");
 @import url("page/container.css");
 @import url("page/main.css");
+@import url("page/caption.css");
 
 /*Sidebar*/
 @import url("sidebar/sidebar.css");
@@ -15,6 +16,9 @@
 @import url("header/logo.css");
 @import url("header/nav.css");
 @import url("header/nav-burger.css");
+
+/*Content*/
+@import url("content/benefits.css");
 
 /*Footer*/
 @import url("footer/footer.css");

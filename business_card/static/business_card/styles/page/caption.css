@@ -1,0 +1,44 @@
+.caption {
+    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 80px;
+}
+
+.caption__title {
+	color: black;
+	font-size: 36px;
+	font-weight: 400;
+	line-height: 43px;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+
+.caption__subtitle {
+	color: gray;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	text-align: center;
+	max-width: 380px;
+	margin: 0;
+}
+
+.line {
+	display: block;
+	height: 2px;
+	width: 200px;
+	background-color: white;
+	margin: 30px 0;
+	box-shadow: 0 1px 0 rgba(0, 0, 1, 0.16);
+}
+
+
+.line--short {
+	background-color: gold;
+	width: 64px;
+}
+
+

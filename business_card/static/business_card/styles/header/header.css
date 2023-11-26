@@ -11,6 +11,8 @@
 	box-shadow: 0 1px 8px rgba(0,0,0,.2);
 
     transition: .45s ease all;
+
+    z-index: 9999;
 }
 
 .header--scrolled {

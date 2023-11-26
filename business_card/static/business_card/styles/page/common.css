@@ -11,3 +11,6 @@ body {
     font-family: 'Open Sans', 'Raleway', sans-serif;
 }
 
+section {
+	margin-bottom: 80px;
+}
