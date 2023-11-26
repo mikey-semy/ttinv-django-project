@@ -6,6 +6,7 @@
 .main-nav__items {
     display: flex;
     justify-content: flex-start;
+    margin: 0;
     align-items: center;
     column-gap: 1.25rem;
     height: 100%;

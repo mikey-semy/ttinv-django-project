@@ -1,0 +1,14 @@
+<a class="logo-main"
+   href="{{ logo.href }}">
+    {% if logo.is_img %}
+        <img id="logo-main-img"
+             class="logo-main__img"
+             src="{{ logo.src }}"
+             alt="{{ logo.title }}">
+    {% else %}
+        <h1 id="logo-main-text"
+            class="logo-main__text">
+            {{ logo.title }}
+        </h1>
+    {% endif %}
+</a>

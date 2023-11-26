@@ -1,0 +1,13 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+/*Body*/
+html,
+body {
+	height: 100%;
+    font-family: 'Open Sans', 'Raleway', sans-serif;
+}
+

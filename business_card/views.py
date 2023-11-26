@@ -1,5 +1,13 @@
 from django.shortcuts import render
 from .models import Benefits
+
+logo = {
+    'title': 'TechTransInvest',
+    'is_img': True,
+    'src': '/static/business_card/images/logo.svg',
+    'href': "/"
+}
+
 nav = [
     {'name': 'О нас', 'url': 'index'},
     {'name': 'Продукция', 'url': 'index'},
@@ -30,6 +38,7 @@ def index(request):
     benefits = Benefits.objects.all()
     data = {
         'title': 'ТехТрансИнвест',
+        'logo': logo,
         'nav': nav,
         'captions': captions,
         'benefits': benefits,

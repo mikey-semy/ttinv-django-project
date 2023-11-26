@@ -1,7 +1,10 @@
+.copyright {
+	position: relative;
+	height: 100%;
+}
 .copyright > p {
 	position: absolute;
-	right: 50%;
-	bottom: 0;
+	margin: auto;
 	color: black;
 	font-size: 0.75rem;
 	font-weight: 400;

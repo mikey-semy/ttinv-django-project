@@ -1,14 +1,40 @@
-.logo--main {
-    margin: 7px 0 0 0;
-    float: left;
+.logo-main {
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+ }
+
+.logo-main:link {
+	color: #000;
 }
 
-.logo__link {
-    width: 200px;
-    height: 80px;
+.logo-main:visited {
+	color: #000;
+}
+
+.logo-main:hover {
+	color: #FFCC00;
+}
+
+.logo-main__img {
     display: block;
-	background: url('/static/business_card/images/logo.svg') no-repeat 0 0;
-    text-indent: -9999px;
-    text-shadow: none;
-    color: transparent;
- }
+    width: 200px;
+    height: 70px;
+    transition: .45s ease all;
+}
+
+.logo-main__img--scrolled {
+    height: 50px;
+    transition: .45s ease all;
+}
+
+.logo-main__text {
+    display: block;
+    font-size: 2rem;
+    transition: .45s ease all;
+}
+
+.logo-main__text--scrolled {
+    font-size: 1.5rem;
+    transition: .45s ease all;
+}
