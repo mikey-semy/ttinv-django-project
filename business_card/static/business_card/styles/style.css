@@ -7,13 +7,18 @@
 @import url("page/container.css");
 @import url("page/main.css");
 
+/*Sidebar*/
+@import url("sidebar/sidebar.css");
+
 /*Header*/
 @import url("header/header.css");
 @import url("header/logo.css");
 @import url("header/nav.css");
+@import url("header/nav-burger.css");
 
 /*Footer*/
 @import url("footer/footer.css");
 @import url("footer/copyright.css");
 
-
+/*Media*/
+@import url("media/media.css");

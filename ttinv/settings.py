@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
     "business_card.apps.BusinessCardConfig",
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,7 @@ STATIC_URL = "static/"
 # STATIC_ROOT = BASE_DIR / "static/"
 #STATICFILES_DIRS = [BASE_DIR / "static"]
 
-# Media files (Images)
+# media files (Images)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
 

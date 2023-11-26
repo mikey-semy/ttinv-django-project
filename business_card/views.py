@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Benefits
 
+from datetime import datetime
 logo = {
     'title': 'TechTransInvest',
     'is_img': True,
@@ -33,6 +34,12 @@ captions = {
     },
 }
 
+copyright = {
+    'year': '© ' + str(datetime.now().year) + ', ',
+    'name': 'TechTransInvest',
+    'link': 'https://ttinv.ru/',
+
+}
 
 def index(request):
     benefits = Benefits.objects.all()
@@ -42,6 +49,7 @@ def index(request):
         'nav': nav,
         'captions': captions,
         'benefits': benefits,
+        'copyright': copyright,
     }
     return render(request, 'business_card/index.html', context=data)
 

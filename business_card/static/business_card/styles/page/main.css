@@ -1,4 +1,7 @@
 .main {
+	display: flex;
+	flex-direction: column;
+
 	padding-top: 10rem;
 	height: 100vh;
 }
