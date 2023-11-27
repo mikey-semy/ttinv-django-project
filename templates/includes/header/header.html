@@ -1,8 +1,8 @@
+{% load templatetags %}
 <header id="header" class="header">
         <div class="header__wrapper">
             {% include 'includes/header/nav-burger.html' %}
             {% include 'includes/header/logo.html' %}
-            {% include 'includes/header/nav.html' %}
-            {% include 'includes/header/socials.html' %}
+            {% navigation 'nav-main' %}
         </div>
 </header>

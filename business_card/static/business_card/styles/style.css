@@ -16,6 +16,7 @@
 @import url("header/logo.css");
 @import url("header/nav.css");
 @import url("header/nav-burger.css");
+@import url("header/socials.css");
 
 /*Content*/
 @import url("content/benefits.css");
@@ -25,4 +26,4 @@
 @import url("footer/copyright.css");
 
 /*Media*/
-@import url("media/media.css");
+@import url("mobile/media.css");

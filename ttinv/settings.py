@@ -124,9 +124,9 @@ STATIC_URL = "static/"
 # STATIC_ROOT = BASE_DIR / "static/"
 #STATICFILES_DIRS = [BASE_DIR / "static"]
 
-# media files (Images)
+# mobile files (Images)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'media/'
+MEDIA_URL = 'mobile/'
 
 
 # Default primary key field type

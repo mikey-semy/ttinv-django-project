@@ -30,14 +30,18 @@
     color: black;
     font-size: .875rem;
     font-weight: 700;
-    opacity: 0.69;
+    /*opacity: 0.69;*/
+    transition: .45s ease all;
 }
 
 .nav-main__link:hover,
 .nav-sidebar__link:hover {
-    color: gray;
-    text-shadow: #000 0 .4px 0;
+    color: #ffcc00;
+    text-shadow: #000 2px .4px 3px;
+    transition: .45s ease all;
 }
+
+
 
 .nav-main__link--current,
 .nav-sidebar__link--current {

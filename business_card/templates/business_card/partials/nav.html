@@ -1,0 +1,11 @@
+<nav id="{{ type_nav }}" class="{{ type_nav }}">
+    <ul class="{{ type_nav }}__items">
+    {% for nav_item in nav %}
+        <li class="{{ type_nav }}__item">
+            <a class="{{ type_nav }}__link" href="{{ nav_item.url }}">  {{ nav_item.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+</nav>
+
+{#nav-main nav-sidebar#}

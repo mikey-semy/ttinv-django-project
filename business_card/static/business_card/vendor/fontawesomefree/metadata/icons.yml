@@ -9971,7 +9971,7 @@ compact-disc:
       - disc
       - disk
       - dvd
-      - media
+      - mobile
       - movie
       - music
       - optical
@@ -19083,7 +19083,7 @@ hashtag:
       - Twitter
       - instagram
       - pound
-      - social media
+      - social mobile
       - tag
   styles:
     - solid
@@ -28090,7 +28090,7 @@ photo-film:
       - film
       - image
       - library
-      - media
+      - mobile
   styles:
     - solid
   unicode: f87c
@@ -29602,7 +29602,7 @@ rectangle-ad:
   search:
     terms:
       - advertisement
-      - media
+      - mobile
       - newspaper
       - promotion
       - publicity
