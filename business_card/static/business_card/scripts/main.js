@@ -1,8 +1,7 @@
-console.log('start')
 $(document).ready(function() {
   $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-    if (scroll >= 200) {
+    let scroll = $(window).scrollTop();
+    if (scroll >= 100) {
       $("#header").addClass("header--scrolled");
       $("#logo-main-img").addClass("logo-main__img--scrolled");
       $("#logo-main-text").addClass("logo-main__text--scrolled");
@@ -32,7 +31,7 @@ $(document).ready(function(){
 		event.preventDefault();
 
 		//забираем идентификатор бока с атрибута href
-		var id  = $(this).attr('href'),
+		let id  = $(this).attr('href'),
 
 		//узнаем высоту от начала страницы до блока на который ссылается якорь
 			top = $(id).offset().top - 100;
