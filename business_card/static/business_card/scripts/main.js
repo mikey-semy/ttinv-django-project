@@ -14,29 +14,57 @@ $(document).ready(function() {
   });
 });
 
-// const container = document.getElementById("container")
-const sidebar = document.getElementById("sidebar")
-const openSidebar = () => {
-    // sidebar.classList.toggle("sidebar--is-hidden")
-    if (sidebar.style.display === "block") {
-        sidebar.style.display = "none"
-    } else {
-        sidebar.style.display = "block"
-    }
-}
+
+$(document).ready(function() {
+  $('#nav-burger').on('click', function() {
+    $('#sidebar').toggleClass('visible');
+  });
+});
+
+// $(document).ready(function() {
+//     $(window).on('click', function(event) {
+//         if (event.target != $('#sidebar')) {
+//             $('nav-sidebar__link').toggleClass('visible');
+//         }
+//   });
+// });
+// // const container = document.getElementById("container")
+// const sidebar = document.getElementById("sidebar")
+// const openSidebar = () => {
+//     // sidebar.classList.toggle("sidebar--is-hidden")
+//     if (sidebar.style.display === "block") {
+//         sidebar.style.display = "none"
+//     } else {
+//         sidebar.style.display = "block"
+//     }
+// }
 
 $(document).ready(function(){
-	$("#nav-main").on("click","a", function (event) {
+	$("nav").on("click","a", function (event) {
 		//отменяем стандартную обработку нажатия по ссылке
 		event.preventDefault();
 
-		//забираем идентификатор бока с атрибута href
+		//забираем идентификатор блока с атрибута href
 		let id  = $(this).attr('href'),
 
 		//узнаем высоту от начала страницы до блока на который ссылается якорь
 			top = $(id).offset().top - 100;
-
+            console.log(top)
 		//анимируем переход на расстояние - top за 1500 мс
-		$('body,html').animate({scrollTop: top}, 1000);
+		$('body,html').animate({scrollTop: top}, 1500);
 	});
 });
+
+$(window).scroll(function(){
+    let $sections = $('section');
+    $sections.each(function(i,el){
+        let top = $(el).offset().top - 100;
+        let bottom = top + $(el).height();
+        let scroll = $(window).scrollTop();
+        let id = $(el).attr('id');
+    	if (scroll > top && scroll < bottom) {
+            $('a.active').removeClass('active');
+            $('a[href="#'+id+'"]').addClass('active');
+        }
+    })
+ });

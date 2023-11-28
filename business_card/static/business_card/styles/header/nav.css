@@ -61,5 +61,7 @@
 }
 
 .active {
-	color: gold !important;
+	color: #ffcc00;
+    text-shadow: #000 2px .4px 3px;
+    transition: .45s ease all;
 }
