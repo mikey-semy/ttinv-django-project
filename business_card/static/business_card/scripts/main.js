@@ -48,10 +48,12 @@ $(document).ready(function(){
 		let id  = $(this).attr('href'),
 
 		//узнаем высоту от начала страницы до блока на который ссылается якорь
-			top = $(id).offset().top - 100;
-            console.log(top)
-		//анимируем переход на расстояние - top за 1500 мс
-		$('body,html').animate({scrollTop: top}, 1500);
+            top = $(id).offset().top - 90;
+
+		//анимируем переход на расстояние - top за 1000 мс
+		$('body,html').animate({scrollTop: top}, 1000);
+
+        $('#sidebar').removeClass('visible');
 	});
 });
 
@@ -62,7 +64,7 @@ $(window).scroll(function(){
         let bottom = top + $(el).height();
         let scroll = $(window).scrollTop();
         let id = $(el).attr('id');
-    	if (scroll > top && scroll < bottom) {
+    	if (scroll >= top && scroll <= bottom) {
             $('a.active').removeClass('active');
             $('a[href="#'+id+'"]').addClass('active');
         }

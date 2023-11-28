@@ -37,8 +37,8 @@
 .nav-main__link:hover,
 .nav-sidebar__link:hover {
     color: #ffcc00;
-    text-shadow: #000 2px .4px 3px;
-    transition: .45s ease all;
+    /*text-shadow: #000 2px .4px 3px;*/
+    transition: .45s ease color;
 }
 
 
