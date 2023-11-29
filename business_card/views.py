@@ -7,7 +7,7 @@ logo = {
     'title': 'TechTransInvest',
     'is_img': True,
     'src': '/static/business_card/images/logo.svg',
-    'href': "/"
+    'href': "/",
 }
 
 nav = [
@@ -37,6 +37,59 @@ socials = [
         "size": "sm",
         "color": "#fff",
         "href": "tel:8(8172)70-10-61",
+    },
+]
+
+contacts = {
+    "address":
+        {
+            "title": "Адрес",
+            "data": "Вологодская область, г. Вологда, ул. Каменный мост, д. 6, оф. 4",
+        },
+    "email":
+        {
+            "title": "Электронный адрес",
+            "data": "textrans.invest@mail.ru",
+        },
+    "phone":
+        {
+            "title": "Телефон",
+            "data": "8 (8172) 70-10-61",
+        },
+    "time":
+        {
+            "title": "Часы работы",
+            "data":
+                {
+                    "workdays": "ПН - ПТ: 9:00 - 17:00",
+                    "weekend": "СБ - ВС: Выходной",
+                },
+        },
+},
+requisites = [
+    {
+        "title": "Полное наименование",
+        "subtitle": "Общество с ограниченной ответственностью «ТехТранс Инвест»",
+    },
+    {
+        "title": "Сокращенное наименование",
+        "subtitle": "ООО «ТехТранс Инвест»",
+    },
+    {
+        "title": "ИНН/КПП",
+        "subtitle": "3525289483/352501001",
+    },
+    {
+        "title": "ОГРН",
+        "subtitle": "1123525017681",
+    },
+    {
+        "title": "Юридический (Физический) адрес",
+        "subtitle": "160000, Вологодская обл., г. Вологда, ул. Каменный мост, д. 6, оф. 4",
+    },
+    {
+        "title": "Банковские реквизиты",
+        "subtitle": "Р/с: 407 028 104 84 00000 2087, в Ф. ОПЕРУ Банка ВТБ (ПАО) в г. Санкт-Петербурге, К/счет: 30101810200000000704, БИК: 044030704",
     },
 ]
 
@@ -77,6 +130,8 @@ def index(request):
         'captions': captions,
         'benefits': benefits,
         'products': products,
+        'contacts': contacts,
+        'requisites': requisites,
         'copyright': copyright,
     }
     return render(request, 'business_card/index.html', context=data)
