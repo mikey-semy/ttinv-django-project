@@ -5,11 +5,11 @@
     {% caption 'benefits' %}
     <div class="benefits__items" >
         {% for benefit in benefits %}
-	        <card class="benefits__item">
+	        <div class="benefits__item">
 		        <img class="benefits__icon" src="{{ benefit.image.url }}">
 		        <div class="benefits__title">{{ benefit.title }}</div>
 		        <div class="benefits__subtitle">{{ benefit.subtitle }}</div>
-            </card>
+            </div>
         {% endfor %}
     </div>
 </section>

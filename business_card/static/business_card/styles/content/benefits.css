@@ -1,18 +1,20 @@
 .benefits {
     position: relative;
 	display: flex;
-	z-index: 1;
 	flex-direction: column;
-	justify-content: space-between;
+
+	/*justify-content: space-between;*/
 	align-items: center;
 	column-gap: 32px;
-
-
 }
 
 .benefits__items {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	gap: 2rem;
+	flex-wrap: wrap;
+	min-height: auto;
 }
 
 .benefits__item {
@@ -29,12 +31,10 @@
 
 .benefits__icon {
 	height: 100px;
-	opacity: 0.8;
-	filter: grayscale(90%);
 }
 
 .benefits__title {
-	color: gray;
+	color: #000;
 	font-size: 20px;
 	font-weight: 700;
 	line-height: 24px;

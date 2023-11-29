@@ -2,6 +2,7 @@
 *:before,
 *:after {
 	box-sizing: border-box;
+	user-select: none;
 }
 
 /*Body*/
@@ -12,5 +13,15 @@ body {
 }
 
 section {
-	margin-bottom: 80px;
+	display: block;
+	min-height: 500px;
 }
+
+/*section:nth-child(odd) {*/
+/*	background-color: white;*/
+/*}*/
+
+
+/*section:nth-child(even){*/
+/*	background-color: gray;*/
+/*}*/

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Benefits
+from .models import Benefits, Products
 
 from datetime import datetime
 
@@ -68,6 +68,7 @@ copyright = {
 
 def index(request):
     benefits = Benefits.objects.all()
+    products = Products.objects.all()
     data = {
         'title': 'ТехТрансИнвест',
         'logo': logo,
@@ -75,6 +76,7 @@ def index(request):
         'socials': socials,
         'captions': captions,
         'benefits': benefits,
+        'products': products,
         'copyright': copyright,
     }
     return render(request, 'business_card/index.html', context=data)
