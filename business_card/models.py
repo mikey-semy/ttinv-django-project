@@ -48,3 +48,26 @@ class Products(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Delivery(models.Model):
+
+    class Meta:
+        verbose_name = 'Доставка'
+        verbose_name_plural = 'Доставка'
+
+    def image_upload_to(self, instance=None):
+        if instance:
+            return os.path.join('images', slugify(self.series.slug), slugify(self.article_slug), instance)
+        return None
+
+    title = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, blank=True,)
+    image = models.FileField(upload_to="images/%Y/%m/%d/",
+                              default='default/no-image.svg',
+                              null=True,
+                              blank=True,
+                              validators=[FileExtensionValidator(['svg', 'png', 'jpg', 'webp'])])
+
+    def __str__(self):
+        return self.title

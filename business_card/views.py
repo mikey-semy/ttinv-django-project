@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Benefits, Products
+from .models import Benefits, Products, Delivery
 
 from datetime import datetime
 
@@ -13,8 +13,12 @@ logo = {
 nav = [
     {'name': 'О нас', 'url': '#benefits'},
     {'name': 'Продукция', 'url': '#products'},
+    {'name': 'Доставка', 'url': '#delivery'},
     {'name': 'Контакты', 'url': '#contacts'},
+
 ]
+
+
 
 socials = [
     {
@@ -66,6 +70,7 @@ contacts = {
                 },
         },
 },
+
 requisites = [
     {
         "title": "Полное наименование",
@@ -110,6 +115,41 @@ captions = {
         'title': 'Продукция',
         'subtitle': '',
     },
+    'delivery': {
+        'title': 'Доставка',
+        'subtitle': 'Обладая собственным автопарком автомобилей, а также успешно сотрудничая с транспортными компаниями, '
+                    'мы можем решать любые логистические задачи, осуществляя доставку даже в небольшие населенные пункты',
+    },
+}
+
+dialogs = {
+    'delivery': {
+        'dellin': {
+            'name': 'Деловые линии',
+            'class': 'dellin',
+            'content':
+                '''
+            
+                ''',
+        },
+        'pek': {
+            'name': 'ПЭК',
+            'class': 'pek',
+            'content':
+                '''
+
+                ''',
+        },
+        'baikalsr': {
+            'name': 'Байкал Сервис',
+            'class': 'baikalsr',
+            'content':
+                '''
+
+                ''',
+        }
+    }
+
 }
 
 copyright = {
@@ -122,6 +162,7 @@ copyright = {
 def index(request):
     benefits = Benefits.objects.all()
     products = Products.objects.all()
+    deliveries = Delivery.objects.all()
     data = {
         'title': 'ТехТрансИнвест',
         'logo': logo,
@@ -133,6 +174,7 @@ def index(request):
         'contacts': contacts,
         'requisites': requisites,
         'copyright': copyright,
+        'deliveries': deliveries,
     }
     return render(request, 'business_card/index.html', context=data)
 

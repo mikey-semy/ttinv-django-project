@@ -72,3 +72,9 @@ $(window).scroll(function(){
  });
 
 $("img, a").on("dragstart", function(event) { event.preventDefault(); });
+
+function openDialog(nameDialog) {
+    let dialog = document.querySelector(nameDialog);
+    dialog.show(); // Показываем диалоговое окно
+}
+

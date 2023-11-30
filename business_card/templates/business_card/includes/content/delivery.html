@@ -1,0 +1,25 @@
+{% load templatetags %}
+<section id="delivery" class="delivery">
+    {% caption 'delivery' %}
+
+    <div class="deliveries__items">
+        {% for delivery in deliveries %}
+			<div class="deliveries__item">
+                <button onclick="openDialog({{ delivery.name }})"
+                        class="deliveries__action">
+                    <img class="deliveries__image" src="{{ delivery.image.url }}">
+                </button>
+{#		        <div class="deliveries__title">{{ delivery.title }}</div>#}
+{#		        <div class="deliveries__subtitle">{{ delivery.subtitle }}</div>#}
+                {% dialog delivery.name %}
+            </div>
+        {% endfor %}
+    </div>
+
+{#    {% include 'business_card/partials/baikalsr.html' %}#}
+{#    {% include 'business_card/partials/dellin.html' %}#}
+{#    {% include 'business_card/partials/pecom.html' %}#}
+
+{#<q-btn label="Реквизиты" color="primary" icon="description" @click="showRequisites = true" />#}
+
+</section>

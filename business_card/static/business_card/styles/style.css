@@ -11,6 +11,9 @@
 /*Sidebar*/
 @import url("sidebar/sidebar.css");
 
+/*Dialog*/
+@import url("dialog/dialog.css");
+
 /*Header*/
 @import url("header/header.css");
 @import url("header/logo.css");
@@ -21,6 +24,7 @@
 /*Content*/
 @import url("content/benefits.css");
 @import url("content/products.css");
+@import url("content/delivery.css");
 @import url("content/brands.css");
 @import url("content/contacts.css");
 
