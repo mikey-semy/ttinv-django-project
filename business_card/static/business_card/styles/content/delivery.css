@@ -53,3 +53,24 @@
 	text-align: center;
 	max-width: 380px;
 }
+
+.deliveries__action {
+	display: block;
+	background: none;
+	border: 0;
+	border-radius: 50%;
+	box-shadow: none;
+	transition: 1s ease all;
+}
+
+.deliveries__action:hover {
+	box-shadow: 0 2px 28px rgba(0,0,0,.2);
+	border-radius: 50%;
+	transition: 1s ease all;
+}
+
+.deliveries__action:active {
+	box-shadow: 2px 5px 28px rgb(255, 204, 0);
+	border-radius: 50%;
+	transition: .5s ease all;
+}

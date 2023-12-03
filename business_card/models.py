@@ -62,12 +62,14 @@ class Delivery(models.Model):
         return None
 
     title = models.CharField(max_length=64)
-    name = models.CharField(max_length=64, blank=True,)
+    name = models.CharField(max_length=64, blank=True)
     image = models.FileField(upload_to="images/%Y/%m/%d/",
                               default='default/no-image.svg',
                               null=True,
                               blank=True,
                               validators=[FileExtensionValidator(['svg', 'png', 'jpg', 'webp'])])
+    path = models.CharField(max_length=64, blank=True)
+    link = models.CharField(max_length=128, blank=True)
 
     def __str__(self):
         return self.title

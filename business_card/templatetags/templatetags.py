@@ -18,7 +18,5 @@ def navigation(type_nav):
 
 @register.inclusion_tag('business_card/partials/dialog.html')
 def dialog(name_dialog):
-    print(name_dialog)
     dialog_model = Delivery.objects.filter(name=name_dialog)
-    print(dialog_model)
     return {'name_dialog': name_dialog, 'dialog': dialog_model}

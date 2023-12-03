@@ -5,21 +5,27 @@
     <div class="deliveries__items">
         {% for delivery in deliveries %}
 			<div class="deliveries__item">
-                <button onclick="openDialog({{ delivery.name }})"
-                        class="deliveries__action">
+                <button class="deliveries__action" data-modal="{{ delivery.name }}"
+{#                    onclick="document.getElementById(this.dataset.modal).showModal()">#}
+                    onclick="showModal(this.dataset.modal)">
                     <img class="deliveries__image" src="{{ delivery.image.url }}">
                 </button>
-{#		        <div class="deliveries__title">{{ delivery.title }}</div>#}
-{#		        <div class="deliveries__subtitle">{{ delivery.subtitle }}</div>#}
-                {% dialog delivery.name %}
             </div>
+
+            <dialog id="{{ delivery.name }}" class="dialog" aria-labeledby="dialog__header" aria-describedby="dialog__content">
+                <button class="dialog__close" onclick="this.closest('dialog').close()"
+                        aria-label="Закрыть">
+                    <i class="fa-solid fa-xmark fa-lg"></i>
+                </button>
+                <h2 id="dialog__header">{{ delivery.title }}</h2>
+                <div id="dialog__content">
+                    {% if is_mobile %}
+                        <a href="{{ delivery.link }}">Калькулятор для расчета доставки</a>
+                    {% else %}
+                        {% include delivery.path %}
+                    {% endif %}
+                </div>
+            </dialog>
         {% endfor %}
     </div>
-
-{#    {% include 'business_card/partials/baikalsr.html' %}#}
-{#    {% include 'business_card/partials/dellin.html' %}#}
-{#    {% include 'business_card/partials/pecom.html' %}#}
-
-{#<q-btn label="Реквизиты" color="primary" icon="description" @click="showRequisites = true" />#}
-
 </section>

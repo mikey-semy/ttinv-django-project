@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render
 from .models import Benefits, Products, Delivery
 
@@ -17,8 +18,6 @@ nav = [
     {'name': 'Контакты', 'url': '#contacts'},
 
 ]
-
-
 
 socials = [
     {
@@ -122,36 +121,6 @@ captions = {
     },
 }
 
-dialogs = {
-    'delivery': {
-        'dellin': {
-            'name': 'Деловые линии',
-            'class': 'dellin',
-            'content':
-                '''
-            
-                ''',
-        },
-        'pek': {
-            'name': 'ПЭК',
-            'class': 'pek',
-            'content':
-                '''
-
-                ''',
-        },
-        'baikalsr': {
-            'name': 'Байкал Сервис',
-            'class': 'baikalsr',
-            'content':
-                '''
-
-                ''',
-        }
-    }
-
-}
-
 copyright = {
     'year': '© ' + str(datetime.now().year) + ', ',
     'name': 'TechTransInvest',
@@ -163,6 +132,9 @@ def index(request):
     benefits = Benefits.objects.all()
     products = Products.objects.all()
     deliveries = Delivery.objects.all()
+
+    print(request)
+
     data = {
         'title': 'ТехТрансИнвест',
         'logo': logo,
@@ -175,6 +147,7 @@ def index(request):
         'requisites': requisites,
         'copyright': copyright,
         'deliveries': deliveries,
+        # 'is_mobile': is_mobile,
     }
     return render(request, 'business_card/index.html', context=data)
 
