@@ -6,7 +6,6 @@
         {% for delivery in deliveries %}
 			<div class="deliveries__item">
                 <button class="deliveries__action" data-modal="{{ delivery.name }}"
-{#                    onclick="document.getElementById(this.dataset.modal).showModal()">#}
                     onclick="showModal(this.dataset.modal)">
                     <img class="deliveries__image" src="{{ delivery.image.url }}">
                 </button>

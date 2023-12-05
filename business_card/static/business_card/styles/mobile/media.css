@@ -97,8 +97,17 @@
 		width: 2rem;
 	}
 
+	.contacts__wrapper {
+		flex-direction: column;
+	}
+
+	.contacts__items {
+		padding: 0;
+	}
+
 	.contacts__map, .contacts__map > iframe {
 		height: 250px;
+		width: 288px;
 	}
 }
 

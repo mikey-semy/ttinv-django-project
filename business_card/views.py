@@ -1,4 +1,3 @@
-import re
 from django.shortcuts import render
 from .models import Benefits, Products, Delivery
 
@@ -43,24 +42,56 @@ socials = [
     },
 ]
 
-contacts = {
-    "address":
+contacts = [
         {
+            "name": "address",
+            "itemprop": "",
+            "icon": {
+                "name": "location-dot",
+                "size": "xl",
+                "color": "#000",
+            },
             "title": "Адрес",
-            "data": "Вологодская область, г. Вологда, ул. Каменный мост, д. 6, оф. 4",
+            "data": {
+                "index": "160000",
+                "region": "Вологодская область",
+                "city": "г.Вологда",
+                "street": "ул.Каменный мост, д. 6, оф. 4",
+            },
+            "href": "https://yandex.ru/maps/?rtext=~59.221150%2C39.891226"
         },
-    "email":
         {
+            "name": "email",
+            "itemprop": "email",
+            "icon": {
+                "name": "envelope",
+                "size": "xl",
+                "color": "#000",
+            },
             "title": "Электронный адрес",
             "data": "textrans.invest@mail.ru",
+            "href": "mailto:textrans.invest@mail.ru"
         },
-    "phone":
         {
+            "name": "phone",
+            "itemprop": "telephone",
+            "icon": {
+                "name": "phone",
+                "size": "xl",
+                "color": "#000",
+            },
             "title": "Телефон",
             "data": "8 (8172) 70-10-61",
+            "href": "tel:8(8172)70-10-61",
         },
-    "time":
         {
+            "name": "schedule",
+            "itemprop": "",
+            "icon": {
+                "name": "clock",
+                "size": "xl",
+                "color": "#000",
+            },
             "title": "Часы работы",
             "data":
                 {
@@ -68,7 +99,7 @@ contacts = {
                     "weekend": "СБ - ВС: Выходной",
                 },
         },
-},
+]
 
 requisites = [
     {
@@ -133,8 +164,6 @@ def index(request):
     products = Products.objects.all()
     deliveries = Delivery.objects.all()
 
-    print(request)
-
     data = {
         'title': 'ТехТрансИнвест',
         'logo': logo,
@@ -147,7 +176,6 @@ def index(request):
         'requisites': requisites,
         'copyright': copyright,
         'deliveries': deliveries,
-        # 'is_mobile': is_mobile,
     }
     return render(request, 'business_card/index.html', context=data)
 

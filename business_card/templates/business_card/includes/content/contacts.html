@@ -1,4 +1,53 @@
 {% load templatetags %}
 <section id="contacts" class="contacts">
     {% caption 'contacts' %}
+    <div class="contacts__wrapper">
+        <div class="contacts__info">
+            <ul class="contacts__items">
+                {% for contact in contacts %}
+                    <li class="contacts__item">
+                        <i class="fa-solid fa-{{ contact.icon.name }} fa-{{ contact.icon.size }}"
+                           style="color: {{ contact.icon.color }};"></i>
+                        <div class="contacts__data">
+                            {% if contact.name == "address" %}
+                                <a class="contacts__link contacts__{{ contact.name }}"
+                                   href="{{ contact.href }}">
+                                    <span>{{ contact.data.index }}, {{ contact.data.region }}</span>
+                                    <span>{{ contact.data.city }}, {{ contact.data.street }}</span>
+                                </a>
+                            {% elif contact.name == "schedule" %}
+                                <div class="contacts__{{ contact.name }}">
+                                    <span>{{ contact.data.workdays }}</span>
+                                    <span>{{ contact.data.weekend }}</span>
+                                </div>
+                            {% else %}
+                                <a class="contacts__link contacts__{{ contact.name }}"
+                                   href="{{ contact.href }}">
+                                    <span itemprop={{ contact.itemprop }}>
+                                        {{ contact.data }}
+                                    </span>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="contacts__map">
+            {% include 'business_card/partials/map.html' %}
+        </div>
+    </div>
+
+{#    <div itemscope itemtype="http://schema.org/Organization">#}
+{#        <span itemprop="name">ООО «ТехТранс Инвест»</span>#}
+{#        Контакты:#}
+{#        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">#}
+{#            Адрес:#}
+{#            <span itemprop="addressLocality">г.Вологда</span>,#}
+{#            <span itemprop="streetAddress">ул.Каменный мост, д.6, оф.4</span>,#}
+{#            <span itemprop="postalCode">160000</span>#}
+{#         </div>#}
+{#        Телефон: <span itemprop="telephone">8 (8172) 70-10-61</span>#}
+{#        Электронная почта: <span itemprop="email">example@exam.ru</span>#}
+{#    </div>#}
 </section>
