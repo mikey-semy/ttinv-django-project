@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
     "business_card.apps.BusinessCardConfig",
-    'fontawesomefree',
+    "fontawesomefree",
+    "django_tables2",
 ]
 
 MIDDLEWARE = [

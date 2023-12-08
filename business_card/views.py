@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from .models import Benefits, Products, Delivery
-
+from .models import Benefits, Products, Delivery, Brands, Requisites
 from datetime import datetime
 
 logo = {
@@ -101,33 +100,6 @@ contacts = [
         },
 ]
 
-requisites = [
-    {
-        "title": "Полное наименование",
-        "subtitle": "Общество с ограниченной ответственностью «ТехТранс Инвест»",
-    },
-    {
-        "title": "Сокращенное наименование",
-        "subtitle": "ООО «ТехТранс Инвест»",
-    },
-    {
-        "title": "ИНН/КПП",
-        "subtitle": "3525289483/352501001",
-    },
-    {
-        "title": "ОГРН",
-        "subtitle": "1123525017681",
-    },
-    {
-        "title": "Юридический (Физический) адрес",
-        "subtitle": "160000, Вологодская обл., г. Вологда, ул. Каменный мост, д. 6, оф. 4",
-    },
-    {
-        "title": "Банковские реквизиты",
-        "subtitle": "Р/с: 407 028 104 84 00000 2087, в Ф. ОПЕРУ Банка ВТБ (ПАО) в г. Санкт-Петербурге, К/счет: 30101810200000000704, БИК: 044030704",
-    },
-]
-
 captions = {
     'benefits': {
         'title': 'Наши преимущества',
@@ -150,6 +122,10 @@ captions = {
         'subtitle': 'Обладая собственным автопарком автомобилей, а также успешно сотрудничая с транспортными компаниями, '
                     'мы можем решать любые логистические задачи, осуществляя доставку даже в небольшие населенные пункты',
     },
+    'request': {
+        'title': 'Запрос',
+        'subtitle': '',
+    },
 }
 
 copyright = {
@@ -163,6 +139,8 @@ def index(request):
     benefits = Benefits.objects.all()
     products = Products.objects.all()
     deliveries = Delivery.objects.all()
+    brands = Brands.objects.all()
+    requisites = Requisites.objects.values_list()
 
     data = {
         'title': 'ТехТрансИнвест',
@@ -176,6 +154,7 @@ def index(request):
         'requisites': requisites,
         'copyright': copyright,
         'deliveries': deliveries,
+        'brands': brands,
     }
     return render(request, 'business_card/index.html', context=data)
 

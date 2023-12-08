@@ -27,6 +27,27 @@ class Benefits(models.Model):
         return self.title
 
 
+class Brands(models.Model):
+
+    class Meta:
+        verbose_name = 'Бренды'
+        verbose_name_plural = 'Бренды'
+
+    def image_upload_to(self, instance=None):
+        if instance:
+            return os.path.join('images', slugify(self.series.slug), slugify(self.article_slug), instance)
+        return None
+
+    title = models.CharField(max_length=64)
+    image = models.FileField(upload_to="images/%Y/%m/%d/",
+                              default='default/no-image.svg',
+                              null=True,
+                              blank=True,
+                              validators=[FileExtensionValidator(['svg', 'png', 'jpg', 'webp'])])
+
+    def __str__(self):
+        return self.title
+
 class Products(models.Model):
 
     class Meta:
@@ -73,3 +94,44 @@ class Delivery(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Request(models.Model):
+
+    class Meta:
+        verbose_name = 'Запросы'
+        verbose_name_plural = 'Запросы'
+
+    # def files_upload_to(self, instance=None):
+    #     if instance:
+    #         return os.path.join('files', slugify(self.series.slug), slugify(self.article_slug), instance)
+    #     return None
+
+    name = models.CharField(max_length=64, blank=True)
+    phone = models.CharField(max_length=148, blank=True)
+    inn = models.CharField(max_length=148)
+    email = models.CharField(max_length=148, blank=True)
+    # files = models.FileField(upload_to="files/%Y/%m/%d/",
+    #                           null=True,
+    #                           blank=False,
+    #                           validators=[FileExtensionValidator(['xls', 'xlsx', 'ods', 'doc', 'docx'])])
+    message = models.TextField(max_length=512)
+
+    def __str__(self):
+        return self.name
+
+class Requisites(models.Model):
+
+    class Meta:
+        verbose_name = 'Реквизиты'
+        verbose_name_plural = 'Реквизиты'
+
+    fullname = models.CharField(max_length=128, verbose_name="Полное наименование")
+    shortname = models.CharField(max_length=64, verbose_name="Сокращенное наименование")
+    innkpp = models.CharField(max_length=32, verbose_name="ИНН/КПП")
+    ogrn = models.CharField(max_length=16, verbose_name="ОГРН")
+    legaladdress = models.CharField(max_length=128, verbose_name="Юридический (Физический) адрес")
+    bankdetails = models.CharField(max_length=128, verbose_name="Банковские реквизиты")
+
+    def __str__(self):
+            return self.shortname
