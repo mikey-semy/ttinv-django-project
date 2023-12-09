@@ -66,6 +66,20 @@
 		font-size: 12px;
 	}
 
+
+	.deliveries__item {
+		padding-top: 0px;
+	}
+
+	.deliveries__image {
+		height: 150px;
+		width: 150px;
+	}
+
+	.brands__img {
+    	padding-right: 0rem;
+	}
+
     .logo-main {
 		margin: 0 auto;
 	}

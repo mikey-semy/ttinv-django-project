@@ -126,12 +126,8 @@ class Requisites(models.Model):
         verbose_name = 'Реквизиты'
         verbose_name_plural = 'Реквизиты'
 
-    fullname = models.CharField(max_length=128, verbose_name="Полное наименование")
-    shortname = models.CharField(max_length=64, verbose_name="Сокращенное наименование")
-    innkpp = models.CharField(max_length=32, verbose_name="ИНН/КПП")
-    ogrn = models.CharField(max_length=16, verbose_name="ОГРН")
-    legaladdress = models.CharField(max_length=128, verbose_name="Юридический (Физический) адрес")
-    bankdetails = models.CharField(max_length=128, verbose_name="Банковские реквизиты")
+    name = models.CharField(max_length=128, verbose_name="Наименование реквизита", blank=True)
+    value = models.CharField(max_length=128, verbose_name="Содержание реквизита", blank=True)
 
     def __str__(self):
-            return self.shortname
+            return self.name

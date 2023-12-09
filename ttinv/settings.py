@@ -63,6 +63,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "django.template.context_processors.media",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -127,7 +128,7 @@ STATIC_URL = "static/"
 
 # mobile files (Images)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'mobile/'
+MEDIA_URL = 'media/'
 
 
 # Default primary key field type

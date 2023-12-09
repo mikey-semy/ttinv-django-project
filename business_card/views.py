@@ -107,7 +107,7 @@ captions = {
     },
     'brands': {
         'title': 'Бренды',
-        'subtitle': '',
+        'subtitle': 'У нас вы можете приобрести продукцию следующих брендов',
     },
     'contacts': {
         'title': 'Контакты',
@@ -140,7 +140,7 @@ def index(request):
     products = Products.objects.all()
     deliveries = Delivery.objects.all()
     brands = Brands.objects.all()
-    requisites = Requisites.objects.values_list()
+    requisites = Requisites.objects.all()
 
     data = {
         'title': 'ТехТрансИнвест',

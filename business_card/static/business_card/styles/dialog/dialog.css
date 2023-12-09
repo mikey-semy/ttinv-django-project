@@ -1,21 +1,24 @@
-dialog {
-    opacity: 0;
+.dialog {
     box-shadow: 0 2px 28px rgba(0,0,0,.2);
     border: 0;
-    transition: opacity 1s ease-out;
+    border-radius: 4px;
 }
 
-@starting-style {
-  dialog[open] {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-  }
-}
-dialog[open] {
-    opacity: 1;
-    transition: opacity 1s ease-out;
+.dialog[open] {
+    animation: open-opacity 1s ease-out forwards;
 }
 
+@keyframes open-opacity {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .dialog__close {
     position: absolute;
     top: 0;
@@ -23,4 +26,26 @@ dialog[open] {
     padding: 1rem;
     background: none;
     border: 0;
+}
+
+.dialog--requisites {
+    max-width: 520px;
+}
+
+.dialog__actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+
+.dialog__action {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.dialog::backdrop {
+    background-color: #252525;
+    opacity: .8;
 }

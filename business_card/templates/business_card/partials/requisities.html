@@ -1,23 +1,29 @@
-<button class="requisites_action" data-modal="requisites"
+<button class="button button--requisites" data-modal="requisites"
         onclick="showModal(this.dataset.modal)">
         Реквизиты
 </button>
-<dialog id="requisites" class="dialog" aria-labeledby="dialog__header" aria-describedby="dialog__content">
+<dialog id="requisites" class="dialog dialog--requisites" aria-labeledby="dialog__header" aria-describedby="dialog__content">
     <button class="dialog__close" onclick="this.closest('dialog').close()"
             aria-label="Закрыть">
         <i class="fa-solid fa-xmark fa-lg"></i>
     </button>
     <h2 id="dialog__header">Реквизиты</h2>
     <div id="dialog__content">
-        {% for requisite in requisites %}
-            <p>{{ requisite }}</p>
-        {% endfor %}
+        <div class="list">
+            {% for requisite in requisites %}
+                <div class="list__item">
+                    <span class="text__name">{{ requisite.name }}</span>
+                    <span class="text__value">{{ requisite.value }}</span>
+                </div>
+            {% endfor %}
+        </div>
     </div>
+
     <div class="dialog__actions">
-        <a class="social__link" href="media/files/requisites-10.12.2018.pdf" download>
+        <a class="dialog__action" href="{{ MEDIA_URL }}/files/requisites-10.12.2018.pdf"  download>
             <span>Скачать</span>
 		</a>
-		<a class="social__link" href="media/files/requisites-10.12.2018.pdf" target="_blank">
+		<a class="dialog__action" href="{{ MEDIA_URL }}/files/requisites-10.12.2018.pdf" target="_blank">
 		    <span>Открыть</span>
 		</a>
     </div>

@@ -7,6 +7,8 @@
 @import url("page/container.css");
 @import url("page/main.css");
 @import url("page/caption.css");
+@import url("page/list.css");
+@import url("page/button.css");
 
 /*Sidebar*/
 @import url("sidebar/sidebar.css");
