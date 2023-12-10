@@ -25,7 +25,6 @@
 
 .nav-main__link,
 .nav-sidebar__link {
-    text-decoration: none;
     text-transform: uppercase;
     color: black;
     font-size: .875rem;

@@ -16,7 +16,8 @@
 	cursor: pointer;
 	user-select: none;
 	appearance: none;
-	touch-action: manipulation;  
+	touch-action: manipulation;
+	transition: .45s ease all;
 }
 .button:focus-visible {
 	box-shadow: 0 0 0 3px lightskyblue;
@@ -25,6 +26,7 @@
 	border-color: transparent;
 	background-color: #ffcc00;
 	color: #fff;
+	transition: .45s ease all;
 }
 .button:active {
 	border-color: #ffcc00 !important;

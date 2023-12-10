@@ -1,3 +1,4 @@
+/* ALL */
 *,
 *:before,
 *:after {
@@ -5,16 +6,16 @@
 	user-select: none;
 }
 
-/*Body*/
+/* BODY */
 html,
 body {
 	height: 100%;
     font-family: 'Open Sans', 'Raleway', sans-serif;
-background-color: #ffffff;
-background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-color: #fff;
+    background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
 }
 
+/* SECTIONS */
 section {
 	display: block;
 	min-height: 500px;
@@ -28,3 +29,15 @@ section {
 /*section:nth-child(even){*/
 /*	background-color: gray;*/
 /*}*/
+
+
+
+/* LINKS */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+	color: #ffcc00;
+	transition: .45s ease all;
+}

@@ -5,9 +5,11 @@
     <div class="products__items">
         {% for product in products %}
 			<div class="products__item">
-		        <img class="products__image" src="{{ product.image.url }}">
-		        <div class="products__title">{{ product.title }}</div>
-		        <div class="products__subtitle">{{ product.subtitle }}</div>
+                <a class="products__link" href="{{ product.link }}">
+		            <img class="products__image" src="{{ product.image.url }}">
+		            <div class="products__title">{{ product.title }}</div>
+		            <div class="products__subtitle">{{ product.subtitle }}</div>
+                </a>
             </div>
         {% endfor %}
     </div>

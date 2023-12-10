@@ -15,7 +15,6 @@
 
 .copyright__link {
 	list-style: none;
-	text-decoration: none;
 	outline: none;
  }
 
@@ -28,6 +27,6 @@
 }
 
 .copyright__link:hover {
-	color: #FFCC00;
+	color: #ffcc00;
 	transition: .45s ease all;
 }

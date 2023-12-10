@@ -14,7 +14,6 @@ nav = [
     {'name': 'Продукция', 'url': '#products'},
     {'name': 'Доставка', 'url': '#delivery'},
     {'name': 'Контакты', 'url': '#contacts'},
-
 ]
 
 socials = [
@@ -130,7 +129,7 @@ captions = {
 
 copyright = {
     'year': '© ' + str(datetime.now().year) + ', ',
-    'name': 'TechTransInvest',
+    'name': 'TechTransInvest - Поставщик подшипников и элементов промышленных трансмиссий',
     'link': 'https://ttinv.ru/',
 }
 
