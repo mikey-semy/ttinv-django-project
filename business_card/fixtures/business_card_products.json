@@ -1,0 +1,47 @@
+[
+{
+  "model": "business_card.products",
+  "pk": 1,
+  "fields": {
+    "title": "Подшипники",
+    "subtitle": "",
+    "image": "images/2023/11/29/bearings.webp"
+  }
+},
+{
+  "model": "business_card.products",
+  "pk": 2,
+  "fields": {
+    "title": "Приводные ремни",
+    "subtitle": "",
+    "image": "images/2023/11/29/belts.webp"
+  }
+},
+{
+  "model": "business_card.products",
+  "pk": 3,
+  "fields": {
+    "title": "Смазочные материалы и системы смазок",
+    "subtitle": "",
+    "image": "images/2023/11/29/lubricant_6eczLtX.webp"
+  }
+},
+{
+  "model": "business_card.products",
+  "pk": 4,
+  "fields": {
+    "title": "Муфты",
+    "subtitle": "",
+    "image": "images/2023/11/29/coupling_QPmycjs.webp"
+  }
+},
+{
+  "model": "business_card.products",
+  "pk": 5,
+  "fields": {
+    "title": "Инструменты",
+    "subtitle": "",
+    "image": "images/2023/12/07/skf-tih-03m-490x490-_2_.webp"
+  }
+}
+]

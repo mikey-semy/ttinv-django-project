@@ -1,0 +1,35 @@
+[
+{
+  "model": "business_card.delivery",
+  "pk": 1,
+  "fields": {
+    "title": "Деловые линии",
+    "name": "dellin",
+    "image": "images/2023/11/30/dellin.svg",
+    "path": "business_card/partials/dellin.html",
+    "link": ""
+  }
+},
+{
+  "model": "business_card.delivery",
+  "pk": 2,
+  "fields": {
+    "title": "ПЭК",
+    "name": "pek",
+    "image": "images/2023/11/30/pek.svg",
+    "path": "business_card/partials/pecom.html",
+    "link": ""
+  }
+},
+{
+  "model": "business_card.delivery",
+  "pk": 3,
+  "fields": {
+    "title": "Байкал Сервис",
+    "name": "baikalsr",
+    "image": "images/2023/11/30/baikalsr.svg",
+    "path": "business_card/partials/baikalsr.html",
+    "link": "https://request.baikalsr.ru/calculator/?guid=fd08850c-b5a2-6e05-3e0c-7765762f1d8e"
+  }
+}
+]

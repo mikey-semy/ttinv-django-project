@@ -1,0 +1,114 @@
+[
+{
+  "model": "business_card.brands",
+  "pk": 2,
+  "fields": {
+    "title": "10gpz",
+    "image": "images/2023/12/08/10gpz.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 3,
+  "fields": {
+    "title": "craft",
+    "image": "images/2023/12/08/craft.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 4,
+  "fields": {
+    "title": "epk",
+    "image": "images/2023/12/08/epk.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 5,
+  "fields": {
+    "title": "fkl",
+    "image": "images/2023/12/08/fkl.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 6,
+  "fields": {
+    "title": "gpz",
+    "image": "images/2023/12/08/gpz.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 7,
+  "fields": {
+    "title": "harp",
+    "image": "images/2023/12/08/harp.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 8,
+  "fields": {
+    "title": "mpz",
+    "image": "images/2023/12/08/mpz.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 9,
+  "fields": {
+    "title": "nachi",
+    "image": "images/2023/12/08/nachi.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 10,
+  "fields": {
+    "title": "nsk",
+    "image": "images/2023/12/08/nsk.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 11,
+  "fields": {
+    "title": "ntn",
+    "image": "images/2023/12/08/ntn.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 12,
+  "fields": {
+    "title": "skf",
+    "image": "images/2023/12/08/skf.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 13,
+  "fields": {
+    "title": "spz4",
+    "image": "images/2023/12/08/spz4.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 14,
+  "fields": {
+    "title": "timken",
+    "image": "images/2023/12/08/timken.png"
+  }
+},
+{
+  "model": "business_card.brands",
+  "pk": 15,
+  "fields": {
+    "title": "vbf",
+    "image": "images/2023/12/08/vbf.png"
+  }
+}
+]
