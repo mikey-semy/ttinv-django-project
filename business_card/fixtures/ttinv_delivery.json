@@ -3,7 +3,7 @@
   "model": "business_card.delivery",
   "pk": 1,
   "fields": {
-    "title": "Деловые линии",
+    "title": "Р”РµР»РѕРІС‹Рµ Р»РёРЅРёРё",
     "name": "dellin",
     "image": "images/2023/11/30/dellin.svg",
     "path": "business_card/partials/dellin.html",
@@ -14,7 +14,7 @@
   "model": "business_card.delivery",
   "pk": 2,
   "fields": {
-    "title": "ПЭК",
+    "title": "РџР­Рљ",
     "name": "pek",
     "image": "images/2023/11/30/pek.svg",
     "path": "business_card/partials/pecom.html",
@@ -25,7 +25,7 @@
   "model": "business_card.delivery",
   "pk": 3,
   "fields": {
-    "title": "Байкал Сервис",
+    "title": "Р‘Р°Р№РєР°Р» РЎРµСЂРІРёСЃ",
     "name": "baikalsr",
     "image": "images/2023/11/30/baikalsr.svg",
     "path": "business_card/partials/baikalsr.html",

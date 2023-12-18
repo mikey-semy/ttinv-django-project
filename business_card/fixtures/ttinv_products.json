@@ -3,7 +3,7 @@
   "model": "business_card.products",
   "pk": 1,
   "fields": {
-    "title": "Подшипники",
+    "title": "РџРѕРґС€РёРїРЅРёРєРё",
     "subtitle": "",
     "image": "images/2023/11/29/bearings.webp"
   }
@@ -12,7 +12,7 @@
   "model": "business_card.products",
   "pk": 2,
   "fields": {
-    "title": "Приводные ремни",
+    "title": "РџСЂРёРІРѕРґРЅС‹Рµ СЂРµРјРЅРё",
     "subtitle": "",
     "image": "images/2023/11/29/belts.webp"
   }
@@ -21,7 +21,7 @@
   "model": "business_card.products",
   "pk": 3,
   "fields": {
-    "title": "Смазочные материалы и системы смазок",
+    "title": "РЎРјР°Р·РѕС‡РЅС‹Рµ РјР°С‚РµСЂРёР°Р»С‹ Рё СЃРёСЃС‚РµРјС‹ СЃРјР°Р·РѕРє",
     "subtitle": "",
     "image": "images/2023/11/29/lubricant_6eczLtX.webp"
   }
@@ -30,7 +30,7 @@
   "model": "business_card.products",
   "pk": 4,
   "fields": {
-    "title": "Муфты",
+    "title": "РњСѓС„С‚С‹",
     "subtitle": "",
     "image": "images/2023/11/29/coupling_QPmycjs.webp"
   }
@@ -39,7 +39,7 @@
   "model": "business_card.products",
   "pk": 5,
   "fields": {
-    "title": "Инструменты",
+    "title": "РРЅСЃС‚СЂСѓРјРµРЅС‚С‹",
     "subtitle": "",
     "image": "images/2023/12/07/skf-tih-03m-490x490-_2_.webp"
   }

@@ -24,8 +24,7 @@ class Benefits(models.Model):
                               validators=[FileExtensionValidator(['svg'])])
 
     def __str__(self):
-        return self.title
-
+        return self.title + ' ' + self.subtitle
 
 class Brands(models.Model):
 
