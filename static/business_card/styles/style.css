@@ -1,0 +1,38 @@
+/*Vendor*/
+@import url("vendor/normalize.css");
+@import url("page/fonts.css");
+
+/*Common*/
+@import url("page/common.css");
+@import url("page/container.css");
+@import url("page/main.css");
+@import url("page/caption.css");
+@import url("page/list.css");
+@import url("page/button.css");
+
+/*Sidebar*/
+@import url("sidebar/sidebar.css");
+
+/*Dialog*/
+@import url("dialog/dialog.css");
+
+/*Header*/
+@import url("header/header.css");
+@import url("header/logo.css");
+@import url("header/nav.css");
+@import url("header/nav-burger.css");
+@import url("header/socials.css");
+
+/*Content*/
+@import url("content/benefits.css");
+@import url("content/products.css");
+@import url("content/delivery.css");
+@import url("content/brands.css");
+@import url("content/contacts.css");
+
+/*Footer*/
+@import url("footer/footer.css");
+@import url("footer/copyright.css");
+
+/*Media*/
+@import url("mobile/media.css");

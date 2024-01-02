@@ -1,0 +1,32 @@
+.copyright {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.copyright__year,
+.copyright__name  {
+	color: #fff;
+	font-size: 0.75rem;
+	font-weight: 400;
+	opacity: 0.8;
+
+}
+
+.copyright__link {
+	list-style: none;
+	outline: none;
+ }
+
+.copyright__link:link {
+	color: #fff;
+}
+
+.copyright__link:visited {
+	color: #fff;
+}
+
+.copyright__link:hover {
+	color: #ffcc00;
+	transition: .45s ease all;
+}

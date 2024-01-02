@@ -1,0 +1,43 @@
+/* ALL */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	user-select: none;
+}
+
+/* BODY */
+html,
+body {
+	height: 100%;
+    font-family: 'Open Sans', 'Raleway', sans-serif;
+    background-color: #fff;
+    background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
+}
+
+/* SECTIONS */
+section {
+	display: block;
+	min-height: 500px;
+}
+
+/*section:nth-child(odd) {*/
+/*	background-color: white;*/
+/*}*/
+
+
+/*section:nth-child(even){*/
+/*	background-color: gray;*/
+/*}*/
+
+
+
+/* LINKS */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+	color: #ffcc00;
+	transition: .45s ease all;
+}

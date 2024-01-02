@@ -1,18 +1,25 @@
+# Стартовый образ
+FROM python:3.12.1-alpine3.19
 
-# pull official base image
-FROM python:3.11.4-slim-buster
 
-# set work directory
-WORKDIR /usr/src/ttinv
-
-# set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# install dependencies
+COPY requirements.txt /temp/requirements.txt
 RUN pip install --upgrade pip
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+RUN apk add postgresql-client build-base postgresql-dev libpq-dev
+RUN pip install -r /temp/requirements.txt
 
-# copy project
-COPY . .
+
+
+COPY . /usr/src/ttinv
+WORKDIR /usr/src/ttinv
+EXPOSE 8000
+
+RUN mkdir -p $WORKDIR/static
+RUN mkdir -p $WORKDIR/media
+
+RUN adduser --disabled-password ttinv
+USER ttinv
+
+ENTRYPOINT ["/usr/src/ttinv/entrypoint.sh" ]

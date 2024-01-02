@@ -1,0 +1,19 @@
+.social__items {
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+}
+
+.social__item {
+    display: block;
+    width: 3rem;
+}
+
+.svg-inline--fa {
+    transition: .45s ease all;
+}
+
+.svg-inline--fa:hover {
+    color: #ffcc00 !important;
+    transition: .45s ease all;
+}

@@ -1,0 +1,44 @@
+.contacts {
+	height: 800px;
+}
+
+.contacts__wrapper {
+	display: flex;
+	justify-content: space-around;
+	gap: 2rem;
+}
+
+.contacts__items {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.contacts__item {
+	list-style-type: none;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.contacts__link {
+    color: black;
+}
+
+.contacts__data {
+  	color: #000;
+  	font-size: 1.2rem;
+}
+
+.contacts__address {
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+}
+
+.contacts__schedule {
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+}
+

@@ -1,0 +1,149 @@
+/* Стили для смартфона */
+@media (max-width: 767px) {
+
+    .container {
+		width: 100%;
+		margin-left: 0px;
+        padding-right: 1rem;
+		padding-left: 1rem;
+	}
+
+	.main {
+		padding-top: 6rem;
+		background: none;
+	}
+
+	.caption {
+		margin-bottom: 0;
+	}
+
+	.caption__title {
+		font-size: 28px;
+	}
+
+	.caption__subtitle {
+		font-size: 12px;
+	}
+
+	.benefits__items {
+		/*flex-direction: column;*/
+	}
+
+	.benefits__item {
+		padding: 10px 20px 10px 25px;
+		width: 320px;
+		row-gap: 1rem;
+	}
+
+	.benefits__icon {
+		height: 64px;
+	}
+
+	.benefits__title {
+		font-size: 20px;
+	}
+
+	.benefits__subtitle {
+		font-size: 12px;
+	}
+
+	.products__item {
+		padding: 10px 20px 10px 25px;
+		width: 320px;
+		row-gap: 1rem;
+	}
+
+	.products__image {
+		height: 220px;
+		width: 220px;
+	}
+
+	.products__title {
+		font-size: 20px;
+	}
+
+	.products__subtitle {
+		font-size: 12px;
+	}
+
+
+	.deliveries__item {
+		padding-top: 0px;
+	}
+
+	.deliveries__image {
+		height: 150px;
+		width: 150px;
+	}
+
+	.brands__img {
+    	padding-right: 0rem;
+	}
+
+    .logo-main {
+		margin: 0 auto;
+	}
+
+	.logo-main__img {
+    	height: 50px;
+	}
+
+	.logo-main__img--scrolled {
+    	height: 40px;
+	}
+
+    .nav-main {
+		display: none;
+	}
+
+	.nav-burger {
+		/*display: flex !important;*/
+        display: block !important;
+		margin: 0;
+	}
+
+	.footer__wrapper {
+		padding-left: 2rem;
+		padding-right: 1rem;
+	}
+
+	.social__item {
+		width: 2rem;
+	}
+
+	.contacts__wrapper {
+		flex-direction: column;
+	}
+
+	.contacts__items {
+		padding: 0;
+	}
+
+	.contacts__map, .contacts__map > iframe {
+		height: 250px;
+		width: 288px;
+	}
+}
+
+/* Стили для планшета */
+ @media (min-width: 768px) and (max-width: 1023px) {
+
+	 .main {
+		padding-top: 6rem;
+		background: none;
+	}
+
+	 .benefits__items {
+		flex-direction: column;
+	}
+	 .contacts__map, .contacts__map > iframe {
+		height: 250px;
+	}
+
+
+}
+
+/* Стили для компьютера */
+@media (min-width: 1024px) {
+
+}

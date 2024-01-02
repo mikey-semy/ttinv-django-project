@@ -1,0 +1,18 @@
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -200px;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    background-color: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,.2);
+    transition: left .45s ease;
+    z-index: 999;
+}
+
+.visible {
+    left: 0px;
+    transition: left .45s ease;
+}
