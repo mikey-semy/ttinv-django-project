@@ -11,13 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 import dj_database_url
-from decouple import config, Csv
+import decouple
+from decouple import config, Csv, RepositoryEnv
 from pathlib import Path
-# import mimetypes
-# mimetypes.add_type("text/css", ".css", True)
-# mimetypes.add_type("text/js", ".js", True)
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:1337"]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
