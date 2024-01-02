@@ -17,6 +17,7 @@ from pathlib import Path
 # mimetypes.add_type("text/css", ".css", True)
 # mimetypes.add_type("text/js", ".js", True)
 
+CSRF_TRUSTED_ORIGINS = ["http://localhost:1337"]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -146,11 +147,12 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static/"
-#STATICFILES_DIRS = [BASE_DIR / "static"]
+#STATICFILES_DIRS = [BASE_DIR / "static",
+#                    "/usr/src/ttinv/static/",]
 
 # Media files (Images)
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type

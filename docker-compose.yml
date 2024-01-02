@@ -6,7 +6,9 @@ services:
     container_name: database_ttinv
     restart: always
     volumes:
-      - database_volume:/var/lib/postgresql/data/    
+      - database_volume:/var/lib/postgresql/data/
+      - web_static_volume:/usr/src/ttinv/static
+      - web_media_volume:/usr/src/ttinv/media
     env_file:
       - ./.env
     # expose:
@@ -47,8 +49,8 @@ services:
       - web
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
-      - web_static_volume:/home/src/ttinv/static
-      - web_media_volume:/home/src/ttinv/media 
+      - web_static_volume:/usr/src/ttinv/static
+      - web_media_volume:/usr/src/ttinv/media 
       
 volumes:
   database_volume:
