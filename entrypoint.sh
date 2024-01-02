@@ -10,10 +10,11 @@ then
     done
     echo "Пора!"
 fi
-# Выполняем миграции
+# Выполняем миграции *удалить создание миграций в дальнейшем
 echo "MAKE MIGRATIONS"
 python manage.py makemigrations
 echo "MIGRATE"
 python manage.py migrate
 echo "END ENTRYPOINT"
+
 exec "$@"

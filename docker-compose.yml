@@ -1,21 +1,30 @@
 version: '3.8'
-# Поднимаем django
+
 services:
+  database:
+    image: postgres:16.1-alpine3.19
+    container_name: database_ttinv
+    restart: always
+    volumes:
+      - database_volume:/var/lib/postgresql/data/    
+    env_file:
+      - ./.env
+    # expose:
+    #   - "5432"
+    ports:
+      - "5432:5432"
+    networks:
+      - network
+
   web:
-    #говорим что build будет из dockerfile который располагается ./django/django_project/
     build: 
       context: .
-    # проброс портов внутрь контейнера, 8000 порт на хост машине будет проброшен внутрь контейнера на такой же 8000 порт
     ports:
-       - 8000:8000
-    # имя контейнера
+      - 8000:8000
     container_name: web_ttinv
-    # перезапускать контейнер при завершении выполнения работы или при аварийном завершении
     restart: always
-    # команда при старте контейнера
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
-    # Для статики мы подключаем два volume (чтобы при перезапуске наши данные не пропадали)), создадим их ниже.
     volumes:
       - .:/usr/src/ttinv/
       - web_static_volume:/usr/src/ttinv/static
@@ -26,24 +35,6 @@ services:
       - ./.env
     networks:
       - network
-
-  database:
-    # Так же разворачиваем с готового контейнера
-    image: postgres:16.1-alpine3.19
-    container_name: database_ttinv
-    # Чтобы наши данные не пропадали при перезапуске подключим volume
-    volumes:
-      - database_volume:/var/lib/postgresql/data/
-    # Переменные окружения. их надо будет передавать в django.
-    env_file:
-      - ./.env
-    # expose:
-    #   - "5432"
-    ports:
-      - "5432:5432"
-    networks:
-      - network
-
 
   nginx:
     build: ./nginx
