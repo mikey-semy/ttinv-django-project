@@ -12,9 +12,9 @@ def caption(section_name):
 
 
 @register.inclusion_tag('business_card/partials/nav.html')
-def navigation(type_nav):
+def navigation(type_nav, links_nav):
     nav = views.nav
-    return {'type_nav': type_nav, 'nav': nav}
+    return {'type_nav': type_nav, 'nav': nav[links_nav]}
 
 @register.inclusion_tag('business_card/partials/dialog.html')
 def dialog(name_dialog):

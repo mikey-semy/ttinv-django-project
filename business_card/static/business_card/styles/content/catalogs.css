@@ -1,0 +1,39 @@
+.catalog__groups {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.catalog__group {
+    background-color: white;
+    width: 1000px;
+    box-shadow: 0 2px 28px rgba(0,0,0,.2);
+    border: 0;
+    border-radius: 4px;
+    padding: 1rem 2rem 2rem 2rem;
+
+}
+
+.catalog__items {
+    display: flex;
+    align-items: center;
+}
+
+.catalog__item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.catalog__image {
+    box-shadow: 0 2px 28px rgba(0,0,0,.2);
+}
+
+.catalog__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+
+    
+}

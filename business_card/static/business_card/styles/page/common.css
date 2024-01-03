@@ -10,14 +10,23 @@
 }
 
 /* BODY */
-html,
 body {
-	height: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
     font-family: 'Open Sans', 'Raleway', sans-serif;
     background-color: #fff;
     background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
 }
 
+main {
+	padding-top: 90px;
+	flex-grow: 1;
+}
+
+footer {
+	flex-shrink: 0;
+}
 /* SECTIONS */
 section {
 	display: block;

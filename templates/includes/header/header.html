@@ -1,8 +1,14 @@
 {% load templatetags %}
-<header id="header" class="header">
+<header role="header" id="header" class="header">
         <div class="header__wrapper">
             {% include 'includes/header/nav-burger.html' %}
             {% include 'includes/header/logo.html' %}
-            {% navigation 'nav-main' %}
+            {% if page == 'index' %}
+                {% navigation 'nav-main' 'index' %}
+            {% elif page == 'catalogs' %}
+                {% navigation 'nav-main' 'catalogs' %}
+            {% else %}
+                {% navigation 'nav-main' 'pnf' %}
+            {%endif%}
         </div>
 </header>

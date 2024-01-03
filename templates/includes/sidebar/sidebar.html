@@ -1,4 +1,10 @@
 {% load templatetags %}
 <aside id="sidebar" class="sidebar">
-    {% navigation 'nav-sidebar' %}
+    {% if page == 'index' %}
+        {% navigation 'nav-sidebar' 'index' %}
+    {% elif page == 'catalogs' %}
+        {% navigation 'nav-sidebar' 'catalogs' %}
+    {% else %}
+        {% navigation 'nav-sidebar' 'pnf' %}
+    {%endif%}
 </aside>

@@ -65,6 +65,7 @@ class Products(models.Model):
                               null=True,
                               blank=True,
                               validators=[FileExtensionValidator(['svg', 'png', 'jpg', 'webp'])])
+    link = models.CharField(max_length=128, blank=True)
 
     def __str__(self):
         return self.title
@@ -128,5 +129,34 @@ class Requisites(models.Model):
     name = models.CharField(max_length=128, verbose_name="Наименование реквизита", blank=True)
     value = models.CharField(max_length=128, verbose_name="Содержание реквизита", blank=True)
 
+    def __str__(self):
+            return self.name
+
+class CatalogGroups(models.Model):
+    class Meta:
+        verbose_name = 'Группы каталогов'
+        verbose_name_plural = 'Группы каталогов'
+
+    name = models.CharField(max_length=128, verbose_name="Наименование группы каталога", blank=True)
+    caption = models.CharField(max_length=128, verbose_name="Загаловок группы каталога", blank=True)
+    items = models.ForeignKey('Catalog', on_delete=models.PROTECT, null=False)
+    
+    def __str__(self):
+            return self.name
+    
+class Catalog(models.Model):
+    class Meta:
+        verbose_name = 'Каталоги'
+        verbose_name_plural = 'Каталоги'
+
+    name = models.CharField(max_length=128, verbose_name="Наименование каталога", blank=True)
+    image = models.FileField(verbose_name="Картинка каталога",
+                                upload_to="images/%Y/%m/%d/",
+                                default='default/no-image.svg',
+                                null=True,
+                                blank=True,
+                                validators=[FileExtensionValidator(['svg', 'png', 'jpg', 'webp'])])
+    link = models.CharField(max_length=128, verbose_name="Ссылка каталога", blank=True)
+    
     def __str__(self):
             return self.name

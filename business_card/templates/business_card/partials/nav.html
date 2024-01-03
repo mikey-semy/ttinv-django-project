@@ -2,7 +2,21 @@
     <ul class="{{ type_nav }}__items">
     {% for nav_item in nav %}
         <li class="{{ type_nav }}__item">
+            {% if nav_item.dropdown %}
+            <div class="dropdown">
+                <a class="{{ type_nav }}__link {{ type_nav }}--dropdown">
+                    {{ nav_item.name }}
+                  <i class="fa fa-caret-down"></i>
+                </a>
+                <div class="dropdown__content">
+                    {% for nav_subitem in nav_item.dropdown_items %}
+                        <a class="{{ type_nav }}__link" href="{{ nav_subitem.url }}">  {{ nav_subitem.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% else %}
             <a class="{{ type_nav }}__link" href="{{ nav_item.url }}">  {{ nav_item.name }}</a>
+            {% endif %}
         </li>
     {% endfor %}
     </ul>

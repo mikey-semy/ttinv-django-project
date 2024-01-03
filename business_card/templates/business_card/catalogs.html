@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="catalog__groups">
+        {% for catalog_group in catalog_groups %}
+            <div id="{{ catalog_group.name }}" class="catalog__group">
+                <h2>{{ catalog_group.caption }}</h2>
+                <div class="catalog__items">
+                    {% for catalog_item in catalog_group.items %}
+                        <div class="catalog__item">
+                            <a class="catalog__link" 
+                                href="{{ catalog_item.link }}" 
+                                target="_blank" 
+                                previewlistener="true">
+                                <img class="catalog__image" src="{{ catalog_item.image }}">
+                                <span>{{ catalog_item.name }}</span>
+                            </a> 
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
