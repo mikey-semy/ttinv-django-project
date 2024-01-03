@@ -6,7 +6,7 @@ logo = {
     'title': 'TechTransInvest',
     'is_img': True,
     'src': '/static/business_card/images/logo.svg',
-    'href': "/",
+    'url': "/",
 }
 
 nav = [
@@ -90,12 +90,24 @@ contacts = [
                 "size": "xl",
                 "color": "#000",
             },
-            "title": "Часы работы",
+            "title": "Режим работы",
             "data":
                 {
                     "workdays": "ПН - ПТ: 9:00 - 17:00",
                     "weekend": "СБ - ВС: Выходной",
                 },
+        },
+        {
+            "name": "requisities",
+            "itemprop": "",
+            "icon": {
+                "name": "file-lines",
+                "size": "xl",
+                "color": "#000",
+            },
+            "title": "",
+            "data": "Реквизиты",
+            "onclick": "showModal(this.dataset.modal)",
         },
 ]
 

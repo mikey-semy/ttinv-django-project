@@ -10,17 +10,26 @@
                            style="color: {{ contact.icon.color }};"></i>
                         <div class="contacts__data">
                             {% if contact.name == "address" %}
+                                <span>{{ contact.title }}:</span>
                                 <a class="contacts__link contacts__{{ contact.name }}"
                                    href="{{ contact.href }}">
                                     <span>{{ contact.data.index }}, {{ contact.data.region }}</span>
                                     <span>{{ contact.data.city }}, {{ contact.data.street }}</span>
                                 </a>
                             {% elif contact.name == "schedule" %}
+                            <span>{{ contact.title }}:</span>
                                 <div class="contacts__{{ contact.name }}">
                                     <span>{{ contact.data.workdays }}</span>
                                     <span>{{ contact.data.weekend }}</span>
                                 </div>
+                            {% elif contact.name == "requisities" %}
+                                <a class="contacts__link contacts__{{ contact.name }}" 
+                                    data-modal="requisites"
+                                    onclick="{{ contact.onclick }}">
+                                    {{ contact.data }}
+                                </a>
                             {% else %}
+                            <span>{{ contact.title }}:</span><br>
                                 <a class="contacts__link contacts__{{ contact.name }}"
                                    href="{{ contact.href }}">
                                     <span itemprop={{ contact.itemprop }}>
@@ -32,10 +41,10 @@
                         </div>
                     </li>
                 {% endfor %}
-                            <div class="contacts__requisities">
-                                {% include 'business_card/partials/requisities.html' %}
-                            </div>
             </ul>
+        </div>
+        <div class="contacts__requisities">
+            {% include 'business_card/partials/requisities.html' %}
         </div>
         <div class="contacts__map">
             {% include 'business_card/partials/map.html' %}

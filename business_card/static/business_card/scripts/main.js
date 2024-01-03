@@ -27,11 +27,13 @@ $(document).ready(function(){
 	$("nav").on("click","a", function (event) {
 		event.preventDefault();
 		let id  = $(this).attr('href'),
-            top = $(id).offset().top - 90;
+      top = $(id).offset().top - 90;
 		$('body,html').animate({scrollTop: top}, 1000);
-        $('#sidebar').removeClass('visible');
+    $('#sidebar').removeClass('visible');
 	});
 });
+
+
 
 // Highlight active section in the navigation
 $(window).scroll(function(){

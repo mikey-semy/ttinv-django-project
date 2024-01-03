@@ -18,7 +18,7 @@
 	list-style-type: none;
 	display: flex;
 	gap: 1rem;
-	align-items: center;
+	/* align-items: center; */
 }
 
 .contacts__link {
@@ -33,12 +33,15 @@
 .contacts__address {
 	display: flex;
 	flex-direction: column;
-	gap: .5rem;
+	/* gap: .5rem; */
 }
 
 .contacts__schedule {
 	display: flex;
 	flex-direction: column;
-	gap: .5rem;
+	/* gap: .5rem; */
 }
 
+.contacts__item > svg {
+	width: 20px;
+}
