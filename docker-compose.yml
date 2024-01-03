@@ -10,7 +10,7 @@ services:
       - web_static_volume:/usr/src/ttinv/static
       - web_media_volume:/usr/src/ttinv/media
     env_file:
-      - ./config/.prod.env
+      - ./config/.env.prod
     # expose:
     #   - "5432"
     ports:
@@ -34,7 +34,7 @@ services:
     depends_on:
       - database
     env_file:
-      - ./config/.prod.env
+      - ./config/.env.prod
     networks:
       - network
 
