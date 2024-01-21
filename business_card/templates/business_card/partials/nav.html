@@ -4,18 +4,38 @@
         <li class="{{ type_nav }}__item">
             {% if nav_item.dropdown %}
             <div class="dropdown">
-                <a class="{{ type_nav }}__link {{ type_nav }}--dropdown">
+                <a class="{{ type_nav }}__link {{ type_nav }}--dropdown" 
+                    {% if nav_item.anchor  %} 
+                        href="{{ nav_item.url }}"
+                    {% else %}
+                        href="{% url page nav_item.url %}"
+                    {% endif %}
+                >
                     {{ nav_item.name }}
                   <i class="fa fa-caret-down"></i>
                 </a>
                 <div class="dropdown__content">
                     {% for nav_subitem in nav_item.dropdown_items %}
-                        <a class="{{ type_nav }}__link" href="{{ nav_subitem.url }}">  {{ nav_subitem.name }}</a>
+                        <a class="{{ type_nav }}__link" 
+                        {% if nav_subitem.anchor  %} 
+                            href="{{ nav_subitem.url }}"
+                        {% else %}
+                            href="{% url page nav_subitem.url %}"
+                        {% endif %}
+                        >  
+                        {{ nav_subitem.name }}</a>
                     {% endfor %}
                 </div>
             </div>
             {% else %}
-            <a class="{{ type_nav }}__link" href="{{ nav_item.url }}">  {{ nav_item.name }}</a>
+            <a class="{{ type_nav }}__link" 
+            {% if nav_item.anchor  %} 
+                href="{{ nav_item.url }}"
+            {% else %}
+                href="{% url page nav_item.url %}"
+            {% endif %}
+            >  
+                {{ nav_item.name }}</a>
             {% endif %}
         </li>
     {% endfor %}

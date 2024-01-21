@@ -1,23 +1,28 @@
 {% extends 'base.html' %}
+{% load templatetags %}
 {% block content %}
     <div class="catalog__groups">
-        {% for catalog_group in catalog_groups %}
-            <div id="{{ catalog_group.name }}" class="catalog__group">
-                <h2>{{ catalog_group.caption }}</h2>
-                <div class="catalog__items">
-                    {% for catalog_item in catalog_group.items %}
-                        <div class="catalog__item">
-                            <a class="catalog__link" 
-                                href="{{ catalog_item.link }}" 
-                                target="_blank" 
-                                previewlistener="true">
-                                <img class="catalog__image" src="{{ catalog_item.image }}">
-                                <span>{{ catalog_item.name }}</span>
-                            </a> 
+        {% for group in groups %}
+            {% with group_catalogs=catalogs|dict_key:group.slug%}
+                {% if group_catalogs %}
+                    <div id="{{ group.slug }}" class="catalog__group">
+                        <h2>{{ group.name }}</h2> 
+                        <div class="catalog__items">
+                            {% for catalog in group_catalogs %}
+                                <div class="catalog__item">
+                                    <a class="catalog__link" 
+                                        href="{{ MEDIA_URL }}{{ catalog.link }}" 
+                                        target="_blank" 
+                                        previewlistener="true">
+                                        <img class="catalog__image" src="{{ MEDIA_URL }}{{ catalog.image }}">
+                                        <span>{{ catalog.name }}</span>
+                                    </a> 
+                                </div>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
-                </div>
-            </div>
+                    </div>
+                {% endif %}
+            {% endwith %}
         {% endfor %}
     </div>
 {% endblock %}

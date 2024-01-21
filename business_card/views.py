@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Benefits, Products, Delivery, Brands, Requisites, Catalog, CatalogGroups
+from django.shortcuts import render, get_object_or_404
+from .models import Benefits, Products, Deliveries, Brands, Requisites, Catalogs, Categories, Groups
 from datetime import datetime
 
 logo = {
@@ -11,31 +11,33 @@ logo = {
 
 nav = {
     'index': [
-        {'name': 'О нас', 'url': '#benefits'},
-        {'name': 'Продукция', 'url': '#products'},
-        {'name': 'Доставка', 'url': '#delivery'},
-        {'name': 'Контакты', 'url': '#contacts'},
+        {'name': 'О нас', 'url': '#benefits', 'anchor': True },
+        {'name': 'Продукция', 'url': '#products', 'anchor': True },
+        {'name': 'Доставка', 'url': '#delivery', 'anchor': True },
+        {'name': 'Контакты', 'url': '#contacts', 'anchor': True },
     ],
     'catalogs': [
-        {'name': 'Подшипники', 'url': '#', 'dropdown': True,
+        {'name': 'Подшипники', 
+         'url': 'bearings', 
+         'dropdown': True, 
+         'anchor': False,
          'dropdown_items': [
-                {'name': 'Общие каталоги', 'url': '#common'},
-                {'name': 'Шариковые подшипники', 'url': '#ball'},
-                {'name': 'Роликовые подшипники', 'url': '#'},
-                {'name': 'Игольчатые подшипники', 'url': '#'},
-                {'name': 'Шарнирные наконечники, шарнирные головки, сферические подшипники скольжения', 'url': '#'},
-                {'name': 'Корпусные подшипники, разъемные корпуса', 'url': '#'},
-                {'name': 'Втулки скольжения', 'url': '#'},
-                {'name': 'Подшипники - Подшипниковые узлы AGRI HUB', 'url': '#'},
+                {'name': 'Общие каталоги', 'url': '#common_bearings', 'anchor': True },
+                {'name': 'Шариковые подшипники', 'url': '#ball-bearings', 'anchor': True },
+                {'name': 'Роликовые подшипники', 'url': '#roll-bearings', 'anchor': True },
+                {'name': 'Игольчатые подшипники', 'url': '#needle-bearings', 'anchor': True },
+                {'name': 'Шарнирные наконечники, шарнирные головки, сферические подшипники скольжения', 'url': '#spherical-bearings', 'anchor': True },
+                {'name': 'Корпусные подшипники, разъемные корпуса', 'url': '#housing-bearings', 'anchor': True },
+                {'name': 'Втулки скольжения', 'url': '#sliding-bushings', 'anchor': True},
             ],
         },
-        {'name': 'Приводные ремни', 'url': '#'},
-        {'name': 'Смазочные материалы', 'url': '#'},
-        {'name': 'Муфты', 'url': '#'},
-        {'name': 'Инструменты', 'url': '#'},
+        {'name': 'Приводные ремни', 'url': 'belts', 'anchor': False },
+        {'name': 'Смазочные материалы', 'url': 'lubricants', 'anchor': False },
+        {'name': 'Муфты', 'url': 'couplings', 'anchor': False },
+        {'name': 'Инструменты', 'url': 'instruments', 'anchor': False },
     ],
     'pnf': [
-        {'name': 'Назад', 'url': '/'},
+        {'name': 'Назад', 'url': '/', 'anchor': False },
     ]
 }
 
@@ -163,38 +165,6 @@ captions = {
     },
 }
 
-catalog_groups = [
-        {
-            'name': 'common',
-            'caption': 'Общие каталоги',
-            'items': 
-            [
-                {
-                    'name': 'SKF',
-                    'image': 'https://technobearing.ru/upload/iblock/2f3/commonSKF.jpg',
-                    'link': 'https://technobearing.ru/d/877366/d/obshchiykatalogskf-min_1.pdf',
-                },
-                {
-                    'name': 'NSK',
-                    'image': 'https://technobearing.ru/upload/iblock/640/commonNSK.jpg',
-                    'link': 'https://technobearing.ru/d/877366/d/obshchiykatalognsk.pdf',
-                },
-            ]
-        },
-        {
-            'name': 'ball',
-            'caption': 'Шариковые подшипники',
-            'items': 
-            [
-                {
-                    'name': 'SKF',
-                    'img': '',
-                    'link': '',
-                },
-            ]
-        },
-]
-
 
 copyright = {
     'year': '© ' + str(datetime.now().year) + ', ',
@@ -206,7 +176,7 @@ copyright = {
 def index(request):
     benefits = Benefits.objects.all()
     products = Products.objects.all()
-    deliveries = Delivery.objects.all()
+    deliveries = Deliveries.objects.all()
     brands = Brands.objects.all()
     requisites = Requisites.objects.all()
 
@@ -228,13 +198,18 @@ def index(request):
     return render(request, 'business_card/index.html', context=data)
 
 
-def catalogs(request):
-    catalog_groups = CatalogGroups.objects.all()
-    catalog = Catalog.objects.all()
+def catalogs(request, catalog_slug):
+
+    groups = Groups.objects.filter(category__slug=catalog_slug)
+    catalogs = {}
+
+    for group in groups:
+        catalogs.update({str(group.slug):Catalogs.objects.filter(category__slug=catalog_slug).filter(group__slug=group.slug)})
 
     data = {
         'page': 'catalogs',
-        'catalog_groups': catalog_groups,
+        'groups': groups,
+        'catalogs': catalogs,
         'title': 'ТехТрансИнвест',
         'logo': logo,
         'nav': nav,
