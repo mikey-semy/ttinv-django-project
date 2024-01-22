@@ -22,9 +22,14 @@ $(document).ready(function() {
   });
 });
 
+
 // Smooth scroll to section
 $(document).ready(function(){
 	$("nav").on("click","a", function (event) {
+    let href = $(this).attr('href');
+    if (!href.startsWith('#')) {
+      return;
+    }
 		event.preventDefault();
 		let id  = $(this).attr('href'),
       top = $(id).offset().top - 90;
