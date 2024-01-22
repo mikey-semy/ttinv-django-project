@@ -2,27 +2,32 @@
 {% load templatetags %}
 {% block content %}
     <div class="catalog__groups">
-        {% for group in groups %}
-            {% with group_catalogs=catalogs|dict_key:group.slug%}
-                {% if group_catalogs %}
-                    <div id="{{ group.slug }}" class="catalog__group">
-                        <h2>{{ group.name }}</h2> 
-                        <div class="catalog__items">
-                            {% for catalog in group_catalogs %}
-                                <div class="catalog__item">
-                                    <a class="catalog__link" 
-                                        href="{{ MEDIA_URL }}{{ catalog.link }}" 
-                                        target="_blank" 
-                                        previewlistener="true">
-                                        <img class="catalog__image" src="{{ MEDIA_URL }}{{ catalog.image }}">
-                                        <span>{{ catalog.name }}</span>
-                                    </a> 
-                                </div>
-                            {% endfor %}
+        {% if groups %}
+            {% for group in groups %}
+                {% with group_catalogs=catalogs|dict_key:group.slug %}
+                    {% if group_catalogs %}
+                        <div id="{{ group.slug }}" class="catalog__group">
+                            <h2>{{ group.name }}</h2> 
+                            <div class="catalog__items">
+                                {% for catalog in group_catalogs %}
+                                    <div class="catalog__item">
+                                        <a class="catalog__link" 
+                                            href="{{ MEDIA_URL }}{{ catalog.link }}" 
+                                            target="_blank" 
+                                            previewlistener="true">
+                                            <img class="catalog__image" src="{{ MEDIA_URL }}{{ catalog.image }}">
+                                            <span>{{ catalog.name }}</span>
+                                        </a> 
+                                    </div>
+                                {% endfor %}
+                            </div>
                         </div>
-                    </div>
-                {% endif %}
-            {% endwith %}
-        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        {% else %}
+            <p>Здесь пока ничего нет...</p>
+        {% endif %}
+        
     </div>
 {% endblock %}

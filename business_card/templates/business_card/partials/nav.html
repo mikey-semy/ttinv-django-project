@@ -2,6 +2,7 @@
     <ul class="{{ type_nav }}__items">
     {% for nav_item in nav %}
         <li class="{{ type_nav }}__item">
+            
             {% if nav_item.dropdown %}
             <div class="dropdown">
                 <a class="{{ type_nav }}__link {{ type_nav }}--dropdown" 
@@ -41,5 +42,4 @@
     {% endfor %}
     </ul>
 </nav>
-
 {#nav-main nav-sidebar#}

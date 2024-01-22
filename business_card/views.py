@@ -207,10 +207,11 @@ def catalogs(request, catalog_slug):
         catalogs.update({str(group.slug):Catalogs.objects.filter(category__slug=catalog_slug).filter(group__slug=group.slug)})
 
     data = {
+        'title': 'ТехТрансИнвест',
         'page': 'catalogs',
+
         'groups': groups,
         'catalogs': catalogs,
-        'title': 'ТехТрансИнвест',
         'logo': logo,
         'nav': nav,
         'copyright': copyright,  
