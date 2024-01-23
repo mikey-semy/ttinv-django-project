@@ -21,7 +21,6 @@
 .nav-main__item,
 .nav-sidebar__item {
     list-style-type: none;
-    min-width: 50px;
 }
 
 .nav-main__link,

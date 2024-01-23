@@ -189,14 +189,29 @@
 
 	.container {
 		max-width: 50rem;
-	} 
+	}
+
 	.main {
 		padding-top: 6rem;
 		background: none;
 
 	}
 
-	 .benefits__items {
+	.nav-main {
+		display: none;
+	}
+
+	.nav-burger {
+		/*display: flex !important;*/
+        display: block !important;
+		margin: 0;
+	}
+	
+	.nav-main__item {
+		min-width: 3rem;
+	}
+
+	.benefits__items {
 		flex-direction: column;
 	}
 	
