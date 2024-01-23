@@ -1,17 +1,22 @@
 // Add class on scroll
 $(document).ready(function() {
   $(window).scroll(function() {
+    
     let scroll = $(window).scrollTop();
-     if (scroll >= 100) {
-      $("#header").addClass("header--scrolled");
-      $("#logo-main-img").addClass("logo-main__img--scrolled");
-      $("#logo-main-text").addClass("logo-main__text--scrolled");
+    console.log(scroll)
+      if (scroll >= 1) {
+        $('#header').addClass('fixed-top');
+        if (scroll >= 100) {
+          $("#header").addClass("header--scrolled");
+          $("#logo-main-img").addClass("logo-main__img--scrolled");
+          $("#logo-main-text").addClass("logo-main__text--scrolled");
 
-    } else {
-      $("#header").removeClass("header--scrolled");
-      $("#logo-main-img").removeClass("logo-main__img--scrolled");
-      $("#logo-main-text").removeClass("logo-main__text--scrolled");
-    }
+        } else {
+          $("#header").removeClass("header--scrolled");
+          $("#logo-main-img").removeClass("logo-main__img--scrolled");
+          $("#logo-main-text").removeClass("logo-main__text--scrolled");
+        }
+      }
   });
 });
 
@@ -72,6 +77,7 @@ $(document).on('ready', function () {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
+        arrows: false,
   responsive: [
     {
       breakpoint: 1024,
@@ -100,3 +106,40 @@ $(document).on('ready', function () {
   ]
     });
   });
+
+  function getScrollbarWidth() {
+
+    // Creating invisible container
+    const outer = document.createElement('div');
+    outer.style.visibility = 'hidden';
+    outer.style.overflow = 'scroll'; // forcing scrollbar to appear
+    outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
+    document.body.appendChild(outer);
+  
+    // Creating inner element and placing it in the container
+    const inner = document.createElement('div');
+    outer.appendChild(inner);
+  
+    // Calculating difference between container's full width and the child width
+    const scrollbarWidth = (outer.offsetWidth - inner.offsetWidth);
+  
+    // Removing temporary elements from the DOM
+    outer.parentNode.removeChild(outer);
+  
+    return scrollbarWidth;
+  
+  }
+
+  function applyPaddingForScrollbar() {
+    let bodyScrollable = document.body.scrollHeight >= window.innerHeight
+    if (bodyScrollable) {
+      document.body.style.paddingRight = '0px'
+    } else {
+      document.body.style.paddingRight = `${getScrollbarWidth}px`
+    }
+  }
+
+  const resizeObserver = new ResizeObserver((entries) => {
+    applyPaddingForScrollbar()
+  })
+  resizeObserver.observe(document.body)

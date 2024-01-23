@@ -14,14 +14,17 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	width: 100%;
     font-family: 'Open Sans', 'Raleway', sans-serif;
     background-color: #fff;
     background-image: url("https://www.transparenttextures.com/patterns/groovepaper.png");
+	overflow: overlay; 
 }
 
 main {
 	padding-top: 90px;
 	flex-grow: 1;
+	width: 100%;
 }
 
 footer {
