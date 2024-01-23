@@ -19,7 +19,7 @@ nav = {
     'catalogs': [
         {'name': 'Подшипники', 
          'url': 'bearings', 
-         'dropdown': True, 
+         'dropdown': False, 
          'anchor': False,
          'dropdown_items': [
                 {'name': 'Общие каталоги', 'url': '#common_bearings', 'anchor': True },
