@@ -22,7 +22,7 @@ body {
 }
 
 main {
-	padding-top: 90px;
+	padding-top: 8rem;
 	flex-grow: 1;
 	width: 100%;
 }
@@ -34,6 +34,12 @@ footer {
 section {
 	display: block;
 	min-height: 500px;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
 }
 
 /*section:nth-child(odd) {*/

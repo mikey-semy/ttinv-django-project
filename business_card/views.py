@@ -1,6 +1,13 @@
 from django.shortcuts import render, get_object_or_404
+from django.utils.termcolors import background
 from .models import Benefits, Products, Deliveries, Brands, Requisites, Catalogs, Categories, Groups
 from datetime import datetime
+
+background =  {
+    'top_left': '/media/background/bg1.jpg',
+    'top_right': '/media/background/bg2.jpg'
+}
+
 
 logo = {
     'title': 'TechTransInvest',
@@ -194,6 +201,7 @@ def index(request):
         'copyright': copyright,
         'deliveries': deliveries,
         'brands': brands,
+        'background': background,
     }
     return render(request, 'business_card/index.html', context=data)
 

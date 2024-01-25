@@ -24,7 +24,7 @@ class Benefits(models.Model):
                                 null=True,
                                 blank=True,
                                 storage=FileSystemStorage(location=str(settings.BASE_DIR), base_url='/'),
-                              validators=[FileExtensionValidator(['svg'])])
+                              validators=[FileExtensionValidator(['svg', 'jpg'])])
 
     def __str__(self):
         return self.title + ' ' + self.subtitle
