@@ -1,15 +1,15 @@
-/* .main {
-	display: flex;
+.main {
+	/* display: flex;
 	flex-direction: column;
 
 	padding-top: 10rem;
-	height: 100vh;
+	height: 100vh; */
 
 	background: left top no-repeat url('business_card/static/business_card/images/background/bg1.jpg'),
 				right top no-repeat url('business_card/static/business_card/images/background/bg2.jpg');
 	background-size: 40%;
 
-} */
+}
 
 .content {
 	display: flex;
