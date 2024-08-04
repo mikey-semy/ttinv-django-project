@@ -1,6 +1,6 @@
 [
 {
-  "model": "business_card.delivery",
+  "model": "business_card.deliveries",
   "pk": 1,
   "fields": {
     "title": "Деловые линии",
@@ -11,7 +11,7 @@
   }
 },
 {
-  "model": "business_card.delivery",
+  "model": "business_card.deliveries",
   "pk": 2,
   "fields": {
     "title": "ПЭК",
@@ -22,7 +22,7 @@
   }
 },
 {
-  "model": "business_card.delivery",
+  "model": "business_card.deliveries",
   "pk": 3,
   "fields": {
     "title": "Байкал Сервис",

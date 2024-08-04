@@ -80,7 +80,7 @@ WSGI_APPLICATION = "ttinv.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-if config('DATABASE') == 'postgres':
+if config('MODE') == 'postgres':
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
@@ -91,6 +91,13 @@ if config('DATABASE') == 'postgres':
             "PORT": config('DB_PORT'),
         }
     }
+elif config('MODE') == 'sqlite':
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 else:
     DATABASES = {
         'default': dj_database_url.config(
