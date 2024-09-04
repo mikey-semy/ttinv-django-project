@@ -17,15 +17,15 @@ RUN pip install -r /temp/requirements.txt
 
 
 COPY . .
-
+COPY entrypoint.sh /usr/src/ttinv/entrypoint.sh
 EXPOSE 8000
 
 RUN mkdir -p /usr/src/ttinv/static
 RUN mkdir -p /usr/src/ttinv/media
 
 RUN chown -R 1000:1000 /usr/src/ttinv/media
-
+RUN chmod +x /usr/src/ttinv/entrypoint.sh
 RUN adduser --disabled-password ttinv
 USER ttinv
 
-ENTRYPOINT ["/usr/src/ttinv/entrypoint.sh"]
+ENTRYPOINT ["sh", "/usr/src/ttinv/entrypoint.sh"]
