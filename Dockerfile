@@ -3,8 +3,8 @@ FROM python:3.12.1-alpine3.19
 
 WORKDIR /usr/src/ttinv
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 RUN apk update \
     && apk add postgresql-client build-base postgresql-dev libpq-dev
