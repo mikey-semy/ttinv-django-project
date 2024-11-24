@@ -1,13 +1,13 @@
 #!/usr/bin/bash
 echo "RUN ENTRYPOINT"
-if [ "$DATABASE" = "postgres" ]
-then
-    echo "База данных ещё не запущена..."
-    while ! nc -z $POSTGRES_HOST $POSTGRES_PORT; do
-      sleep 0.1
-    done
-    echo "Запущена, продолжаем..."
-fi
+# if [ "$DATABASE" = "postgres" ]
+# then
+#     echo "База данных ещё не запущена..."
+#     while ! nc -z $POSTGRES_HOST $POSTGRES_PORT; do
+#       sleep 0.1
+#     done
+#     echo "Запущена, продолжаем..."
+# fi
 echo "Создаем миграции..."
 python manage.py makemigrations
 echo "Мигрируем..."
