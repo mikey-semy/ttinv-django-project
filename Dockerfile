@@ -13,9 +13,6 @@ RUN pip install --upgrade pip
 COPY requirements.txt /temp/requirements.txt
 RUN pip install -r /temp/requirements.txt
 
-
-
-
 COPY . .
 COPY entrypoint.sh /usr/src/ttinv/entrypoint.sh
 EXPOSE 8000
