@@ -1,28 +1,44 @@
-# Стартовый образ
-FROM python:3.12.1-alpine3.19
+# Use a variable for the Python version
+ARG PYTHON_VERSION=3.12.1
+
+# Use a variable for the Alpine Linux version
+ARG ALPINE_VERSION=3.19
+
+# Use the latest Python and Alpine Linux versions by default
+FROM python:${PYTHON_VERSION}-alpine${ALPINE_VERSION}
 
 WORKDIR /usr/src/ttinv
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# Update the package index and install dependencies
 RUN apk update \
-    && apk add postgresql-client build-base postgresql-dev libpq-dev
+    && apk add --no-cache postgresql-client build-base postgresql-dev libpq-dev
 
-RUN pip install --upgrade pip
-COPY requirements.txt /temp/requirements.txt
-RUN pip install -r /temp/requirements.txt
+# Install pip and requirements
+RUN apk add --no-cache python3-pip \
+    && pip3 install --upgrade pip \
+    && pip3 install -r requirements.txt
 
-COPY . .
+# Copy files and directories, set ownership and permissions
+COPY . /usr/src/ttinv
 COPY entrypoint.sh /usr/src/ttinv/entrypoint.sh
+RUN mkdir -p /usr/src/ttinv/static \
+    && mkdir -p /usr/src/ttinv/media \
+    && chown -R 1000:1000 /usr/src/ttinv/media \
+    && chmod +x /usr/src/ttinv/entrypoint.sh
+
+# Expose the port
 EXPOSE 8000
 
-RUN mkdir -p /usr/src/ttinv/static
-RUN mkdir -p /usr/src/ttinv/media
+# Create a new user and switch to it
+RUN adduser --disabled-password ttinv \
+    && usermod -u 1000 ttinv \
+    && groupmod -g 1000 ttinv \
+    && chown -R ttinv:ttinv /usr/src/ttinv
 
-RUN chown -R 1000:1000 /usr/src/ttinv/media
-RUN chmod +x /usr/src/ttinv/entrypoint.sh
-RUN adduser --disabled-password ttinv
 USER ttinv
 
+# Set the entrypoint
 ENTRYPOINT ["sh", "/usr/src/ttinv/entrypoint.sh"]
